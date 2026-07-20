@@ -10,6 +10,40 @@ TanStack Store, XState and the React primitives.
 
 ---
 
+> ## ⚠️ Read this before relying on anything below
+>
+> **This is partial input to an open ticket, not settled research.** The session that produced it
+> **stalled deliberately**: the transport question could not be answered without knowing what the Tauri
+> backend actually emits. #5 is now blocked by
+> [#7 — How is local inference invoked from Tauri?](https://github.com/qodesmith/recap/issues/7).
+>
+> **No technology has been chosen.** Every client-side pick is reserved to the user by a standing decision
+> on the map. Nothing here is a recommendation to act on.
+>
+> ### What #7 can still overturn
+>
+> - **§2 (Transport: Channels vs events)** — in-process Rust vs sidecar determines whether a Tauri Channel
+>   is even available on the hot path. Re-read this section against #7's answer before using it.
+> - **§3's mitigations** — whether cache-thrash handling is needed at all also depends on
+>   [#13](https://github.com/qodesmith/recap/issues/13)'s answer on progress chattiness.
+>
+> ### What stands regardless
+>
+> §4 (the playback cursor cannot be React state at ~60Hz — a fact about React's own source), the StrictMode
+> double-subscribe leak and the optimistic-edit clobbering in §8, the `replaceEqualDeep` complexity analysis,
+> the `streamedQuery` correction, §7 (Router), and §9 (Docker Desktop precedent). None of these depend on the
+> backend architecture.
+>
+> ### Also note
+>
+> **Nothing here was benchmarked** — all performance claims are complexity read from source, not measured.
+> See §8 for the full list of open holes.
+>
+> #5 is a `wayfinder:grilling` ticket: it resolves through conversation with the user, not by handing this
+> document to an agent.
+
+---
+
 ## 0. The short version
 
 Your two-category model is right, but **category 2 splits in two**, and that split is the answer:

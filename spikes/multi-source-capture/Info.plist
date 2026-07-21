@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THROWAWAY SPIKE. Embedded into the CLI binary via -sectcreate so TCC
+     can present usage strings for the mic and audio-capture prompts. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.qodesmith.recap.capture-spike</string>
+    <key>CFBundleName</key>
+    <string>Recap Capture Spike</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Recap capture spike needs the microphone to prove multi-source recording.</string>
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>Recap capture spike needs system audio capture to prove multi-source recording.</string>
+</dict>
+</plist>

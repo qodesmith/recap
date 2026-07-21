@@ -1,0 +1,2342 @@
+{
+  "audioFile": "/tmp/recap-spike/zeyad01_16k_mono.wav",
+  "durationSeconds": 2070.996,
+  "processingTimeSeconds": 12.994943022727966,
+  "realTimeFactor": 159.36938,
+  "segments": [
+    {
+      "endTimeSeconds": 2.190153,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 0
+    },
+    {
+      "endTimeSeconds": 7.7419353,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 3.9219015
+    },
+    {
+      "endTimeSeconds": 9.711375,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 8.234296
+    },
+    {
+      "endTimeSeconds": 13.310696,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 11.154499
+    },
+    {
+      "endTimeSeconds": 17.028862,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 13.904923
+    },
+    {
+      "endTimeSeconds": 27.011885,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 17.826824
+    },
+    {
+      "endTimeSeconds": 33.005093,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 27.657045
+    },
+    {
+      "endTimeSeconds": 44.770798,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 33.548386
+    },
+    {
+      "endTimeSeconds": 48.794567,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 45.280136
+    },
+    {
+      "endTimeSeconds": 54.855686,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 49.10017
+    },
+    {
+      "endTimeSeconds": 59.57555,
+      "qualityScore": 0.9754391,
+      "speakerId": "S2",
+      "startTimeSeconds": 54.855686
+    },
+    {
+      "endTimeSeconds": 63.480476,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 60.101868
+    },
+    {
+      "endTimeSeconds": 66.96095,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 63.837013
+    },
+    {
+      "endTimeSeconds": 73.93888,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 68.14941
+    },
+    {
+      "endTimeSeconds": 78.28523,
+      "qualityScore": 0.8101265,
+      "speakerId": "S1",
+      "startTimeSeconds": 73.93888
+    },
+    {
+      "endTimeSeconds": 94.244484,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 78.70968
+    },
+    {
+      "endTimeSeconds": 100.797966,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 95.87437
+    },
+    {
+      "endTimeSeconds": 108.93039,
+      "qualityScore": 0.8153846,
+      "speakerId": "S1",
+      "startTimeSeconds": 101.20544
+    },
+    {
+      "endTimeSeconds": 122.190155,
+      "qualityScore": 0.9591549,
+      "speakerId": "S1",
+      "startTimeSeconds": 110.135826
+    },
+    {
+      "endTimeSeconds": 137.87776,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 135.16129
+    },
+    {
+      "endTimeSeconds": 151.88455,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 145.28014
+    },
+    {
+      "endTimeSeconds": 155.31409,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 153.0051
+    },
+    {
+      "endTimeSeconds": 161.2394,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 157.91171
+    },
+    {
+      "endTimeSeconds": 166.50255,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 163.2258
+    },
+    {
+      "endTimeSeconds": 168.6927,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 166.67233
+    },
+    {
+      "endTimeSeconds": 177.5382,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 173.82004
+    },
+    {
+      "endTimeSeconds": 179.77928,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 177.9966
+    },
+    {
+      "endTimeSeconds": 186.79117,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 181.6978
+    },
+    {
+      "endTimeSeconds": 189.08319,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 186.79117
+    },
+    {
+      "endTimeSeconds": 191.27335,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 189.83022
+    },
+    {
+      "endTimeSeconds": 206.34975,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 191.49406
+    },
+    {
+      "endTimeSeconds": 209.72835,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 206.8421
+    },
+    {
+      "endTimeSeconds": 218.43803,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 217.1477
+    },
+    {
+      "endTimeSeconds": 227.33447,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 225.02547
+    },
+    {
+      "endTimeSeconds": 236.21393,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 227.33447
+    },
+    {
+      "endTimeSeconds": 238.6078,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 236.80815
+    },
+    {
+      "endTimeSeconds": 242.9202,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 239.32088
+    },
+    {
+      "endTimeSeconds": 246.3837,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 243.03905
+    },
+    {
+      "endTimeSeconds": 253.58234,
+      "qualityScore": 0.99530584,
+      "speakerId": "S1",
+      "startTimeSeconds": 246.3837
+    },
+    {
+      "endTimeSeconds": 259.55856,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 254.19354
+    },
+    {
+      "endTimeSeconds": 268.25128,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 260.25467
+    },
+    {
+      "endTimeSeconds": 271.59592,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 268.5569
+    },
+    {
+      "endTimeSeconds": 273.6842,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 271.91852
+    },
+    {
+      "endTimeSeconds": 275.80646,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 273.88794
+    },
+    {
+      "endTimeSeconds": 288.3871,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 276.48557
+    },
+    {
+      "endTimeSeconds": 292.83533,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 288.82852
+    },
+    {
+      "endTimeSeconds": 297.3684,
+      "qualityScore": 0.85303104,
+      "speakerId": "S1",
+      "startTimeSeconds": 292.83533
+    },
+    {
+      "endTimeSeconds": 303.75214,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 299.3039
+    },
+    {
+      "endTimeSeconds": 306.72327,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 304.09167
+    },
+    {
+      "endTimeSeconds": 308.8455,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 307.64008
+    },
+    {
+      "endTimeSeconds": 317.62308,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 308.8455
+    },
+    {
+      "endTimeSeconds": 325.72156,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 319.43973
+    },
+    {
+      "endTimeSeconds": 334.0068,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 327.72495
+    },
+    {
+      "endTimeSeconds": 347.89474,
+      "qualityScore": 0.9522694,
+      "speakerId": "S1",
+      "startTimeSeconds": 334.0068
+    },
+    {
+      "endTimeSeconds": 351.6129,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 348.6248
+    },
+    {
+      "endTimeSeconds": 354.58405,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 352.35992
+    },
+    {
+      "endTimeSeconds": 364.78778,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 356.19693
+    },
+    {
+      "endTimeSeconds": 368.20035,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 366.5365
+    },
+    {
+      "endTimeSeconds": 370.4584,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 368.43802
+    },
+    {
+      "endTimeSeconds": 372.19016,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 371.1545
+    },
+    {
+      "endTimeSeconds": 377.62308,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 372.75043
+    },
+    {
+      "endTimeSeconds": 383.42953,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 380.3905
+    },
+    {
+      "endTimeSeconds": 391.62988,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 384.80475
+    },
+    {
+      "endTimeSeconds": 394.51614,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 393.20883
+    },
+    {
+      "endTimeSeconds": 399.7623,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 397.3684
+    },
+    {
+      "endTimeSeconds": 404.80475,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 403.05603
+    },
+    {
+      "endTimeSeconds": 412.37692,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 407.43634
+    },
+    {
+      "endTimeSeconds": 417.2326,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 412.90323
+    },
+    {
+      "endTimeSeconds": 426.04413,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 417.57214
+    },
+    {
+      "endTimeSeconds": 428.50595,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 427.2156
+    },
+    {
+      "endTimeSeconds": 430.35654,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 428.7776
+    },
+    {
+      "endTimeSeconds": 433.2258,
+      "qualityScore": 0,
+      "speakerId": "S1",
+      "startTimeSeconds": 432.0034
+    },
+    {
+      "endTimeSeconds": 437.5212,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 434.09167
+    },
+    {
+      "endTimeSeconds": 440.79797,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 439.6095
+    },
+    {
+      "endTimeSeconds": 443.56537,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 441.78268
+    },
+    {
+      "endTimeSeconds": 450.05093,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 447.64008
+    },
+    {
+      "endTimeSeconds": 457.18167,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 451.35825
+    },
+    {
+      "endTimeSeconds": 460.33957,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 457.64008
+    },
+    {
+      "endTimeSeconds": 469.13412,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 465.6197
+    },
+    {
+      "endTimeSeconds": 474.97455,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 471.6129
+    },
+    {
+      "endTimeSeconds": 482.59763,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 475.36502
+    },
+    {
+      "endTimeSeconds": 486.58743,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 484.73685
+    },
+    {
+      "endTimeSeconds": 489.89813,
+      "qualityScore": 0.8705334,
+      "speakerId": "S2",
+      "startTimeSeconds": 486.58743
+    },
+    {
+      "endTimeSeconds": 492.4618,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 491.08658
+    },
+    {
+      "endTimeSeconds": 500.3905,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 492.9372
+    },
+    {
+      "endTimeSeconds": 504.8387,
+      "qualityScore": 0.8590127,
+      "speakerId": "S2",
+      "startTimeSeconds": 500.3905
+    },
+    {
+      "endTimeSeconds": 511.2903,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 505.3141
+    },
+    {
+      "endTimeSeconds": 518.96436,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 512.0713
+    },
+    {
+      "endTimeSeconds": 523.073,
+      "qualityScore": 0.9797546,
+      "speakerId": "S1",
+      "startTimeSeconds": 518.96436
+    },
+    {
+      "endTimeSeconds": 529.62646,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 523.9049
+    },
+    {
+      "endTimeSeconds": 531.6978,
+      "qualityScore": 0.8133493,
+      "speakerId": "S2",
+      "startTimeSeconds": 529.62646
+    },
+    {
+      "endTimeSeconds": 533.7861,
+      "qualityScore": 0.78845,
+      "speakerId": "S1",
+      "startTimeSeconds": 531.6978
+    },
+    {
+      "endTimeSeconds": 537.79285,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 534.2445
+    },
+    {
+      "endTimeSeconds": 539.1511,
+      "qualityScore": 0,
+      "speakerId": "S1",
+      "startTimeSeconds": 538.1155
+    },
+    {
+      "endTimeSeconds": 548.3022,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 539.5076
+    },
+    {
+      "endTimeSeconds": 556.55347,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 548.7776
+    },
+    {
+      "endTimeSeconds": 565.4839,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 559.18506
+    },
+    {
+      "endTimeSeconds": 570.64514,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 565.7046
+    },
+    {
+      "endTimeSeconds": 573.27673,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 570.98474
+    },
+    {
+      "endTimeSeconds": 584.1766,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 573.73517
+    },
+    {
+      "endTimeSeconds": 586.34973,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 585.05945
+    },
+    {
+      "endTimeSeconds": 592.326,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 586.68933
+    },
+    {
+      "endTimeSeconds": 595.55176,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 592.7165
+    },
+    {
+      "endTimeSeconds": 596.57043,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 595.5688
+    },
+    {
+      "endTimeSeconds": 600.64514,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 596.7742
+    },
+    {
+      "endTimeSeconds": 608.21735,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 601.0187
+    },
+    {
+      "endTimeSeconds": 615.41595,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 608.65875
+    },
+    {
+      "endTimeSeconds": 629.0832,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 615.8404
+    },
+    {
+      "endTimeSeconds": 638.8625,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 629.57556
+    },
+    {
+      "endTimeSeconds": 644.8727,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 639.26996
+    },
+    {
+      "endTimeSeconds": 652.0034,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 645.94226
+    },
+    {
+      "endTimeSeconds": 656.4516,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 652.3599
+    },
+    {
+      "endTimeSeconds": 661.1036,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 658.87946
+    },
+    {
+      "endTimeSeconds": 663.34467,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 661.6638
+    },
+    {
+      "endTimeSeconds": 675.9083,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 664.10864
+    },
+    {
+      "endTimeSeconds": 680,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 676.50256
+    },
+    {
+      "endTimeSeconds": 685.58575,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 680
+    },
+    {
+      "endTimeSeconds": 696.7912,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 685.7046
+    },
+    {
+      "endTimeSeconds": 703.49744,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 696.96094
+    },
+    {
+      "endTimeSeconds": 714.66895,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 704.5161
+    },
+    {
+      "endTimeSeconds": 716.72327,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 715.4669
+    },
+    {
+      "endTimeSeconds": 722.7504,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 717.5043
+    },
+    {
+      "endTimeSeconds": 727.708,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 725.9083
+    },
+    {
+      "endTimeSeconds": 741.34125,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 728.2343
+    },
+    {
+      "endTimeSeconds": 748.7606,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 741.6638
+    },
+    {
+      "endTimeSeconds": 750.798,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 748.8115
+    },
+    {
+      "endTimeSeconds": 752.64856,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 751.1545
+    },
+    {
+      "endTimeSeconds": 756.2139,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 753.2428
+    },
+    {
+      "endTimeSeconds": 761.6129,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 758.70966
+    },
+    {
+      "endTimeSeconds": 766.3667,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 763.3786
+    },
+    {
+      "endTimeSeconds": 768.6757,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 766.5365
+    },
+    {
+      "endTimeSeconds": 773.5993,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 769.57556
+    },
+    {
+      "endTimeSeconds": 799.8302,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 776.7572
+    },
+    {
+      "endTimeSeconds": 802.2411,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 800.50934
+    },
+    {
+      "endTimeSeconds": 805.58575,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 803.871
+    },
+    {
+      "endTimeSeconds": 810.4924,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 807.4024
+    },
+    {
+      "endTimeSeconds": 814.5331,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 812.5976
+    },
+    {
+      "endTimeSeconds": 817.6401,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 815.1783
+    },
+    {
+      "endTimeSeconds": 822.7674,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 818.0815
+    },
+    {
+      "endTimeSeconds": 830.8489,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 823.2937
+    },
+    {
+      "endTimeSeconds": 832.42786,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 831.25635
+    },
+    {
+      "endTimeSeconds": 837.60614,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 834.2954
+    },
+    {
+      "endTimeSeconds": 839.62646,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 838.1664
+    },
+    {
+      "endTimeSeconds": 841.7997,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 840.18677
+    },
+    {
+      "endTimeSeconds": 844.2105,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 842.2411
+    },
+    {
+      "endTimeSeconds": 846.16296,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 844.9576
+    },
+    {
+      "endTimeSeconds": 855.2122,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 847.13074
+    },
+    {
+      "endTimeSeconds": 859.4737,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 856.0951
+    },
+    {
+      "endTimeSeconds": 865.4669,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 860.59424
+    },
+    {
+      "endTimeSeconds": 876.63837,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 865.94226
+    },
+    {
+      "endTimeSeconds": 878.3871,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 877.21564
+    },
+    {
+      "endTimeSeconds": 882.292,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 878.9474
+    },
+    {
+      "endTimeSeconds": 885.4329,
+      "qualityScore": 0.6045771,
+      "speakerId": "S2",
+      "startTimeSeconds": 882.292
+    },
+    {
+      "endTimeSeconds": 894.3803,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 886.4516
+    },
+    {
+      "endTimeSeconds": 897.6401,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 895.382
+    },
+    {
+      "endTimeSeconds": 904.8557,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 898.43805
+    },
+    {
+      "endTimeSeconds": 908.7267,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 905.28015
+    },
+    {
+      "endTimeSeconds": 911.29034,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 909.4737
+    },
+    {
+      "endTimeSeconds": 920.8319,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 911.81665
+    },
+    {
+      "endTimeSeconds": 923.2258,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 921.4431
+    },
+    {
+      "endTimeSeconds": 927.1647,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 923.6333
+    },
+    {
+      "endTimeSeconds": 932.1901,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 928.3022
+    },
+    {
+      "endTimeSeconds": 936.6723,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 933.00507
+    },
+    {
+      "endTimeSeconds": 938.4211,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 936.927
+    },
+    {
+      "endTimeSeconds": 940.6282,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 939.6095
+    },
+    {
+      "endTimeSeconds": 953.3277,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 943.80304
+    },
+    {
+      "endTimeSeconds": 958.48895,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 956.55347
+    },
+    {
+      "endTimeSeconds": 961.8845,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 958.74365
+    },
+    {
+      "endTimeSeconds": 967.6401,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 962.47876
+    },
+    {
+      "endTimeSeconds": 971.34125,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 969.2869
+    },
+    {
+      "endTimeSeconds": 978.6927,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 972.2411
+    },
+    {
+      "endTimeSeconds": 982.8353,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 979.32086
+    },
+    {
+      "endTimeSeconds": 989.202,
+      "qualityScore": 0.94696516,
+      "speakerId": "S2",
+      "startTimeSeconds": 982.8353
+    },
+    {
+      "endTimeSeconds": 991.9185,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 989.5076
+    },
+    {
+      "endTimeSeconds": 994.19354,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 992.275
+    },
+    {
+      "endTimeSeconds": 997.9966,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 994.97455
+    },
+    {
+      "endTimeSeconds": 1002.9202,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 998.5569
+    },
+    {
+      "endTimeSeconds": 1005.4499,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1004.1256
+    },
+    {
+      "endTimeSeconds": 1012.56366,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1006.11206
+    },
+    {
+      "endTimeSeconds": 1020,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1012.69946
+    },
+    {
+      "endTimeSeconds": 1021.42615,
+      "qualityScore": 0.7924439,
+      "speakerId": "S2",
+      "startTimeSeconds": 1020
+    },
+    {
+      "endTimeSeconds": 1025.416,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1021.42615
+    },
+    {
+      "endTimeSeconds": 1030.4244,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1026.1969
+    },
+    {
+      "endTimeSeconds": 1032.3939,
+      "qualityScore": 0.95870227,
+      "speakerId": "S2",
+      "startTimeSeconds": 1030.4244
+    },
+    {
+      "endTimeSeconds": 1034.8896,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1032.7164
+    },
+    {
+      "endTimeSeconds": 1036.6044,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1035.2292
+    },
+    {
+      "endTimeSeconds": 1041.1205,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1037.64
+    },
+    {
+      "endTimeSeconds": 1046.2988,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1042.1732
+    },
+    {
+      "endTimeSeconds": 1056.3667,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1046.9949
+    },
+    {
+      "endTimeSeconds": 1058.6927,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1056.7572
+    },
+    {
+      "endTimeSeconds": 1060.713,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1059.2699
+    },
+    {
+      "endTimeSeconds": 1073.3107,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1064.635
+    },
+    {
+      "endTimeSeconds": 1076.4856,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1074.1426
+    },
+    {
+      "endTimeSeconds": 1084.7708,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1076.6724
+    },
+    {
+      "endTimeSeconds": 1089.4907,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1085.0934
+    },
+    {
+      "endTimeSeconds": 1091.6469,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1089.983
+    },
+    {
+      "endTimeSeconds": 1095.8744,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1091.9865
+    },
+    {
+      "endTimeSeconds": 1103.0221,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1096.7572
+    },
+    {
+      "endTimeSeconds": 1108.6417,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1104.2106
+    },
+    {
+      "endTimeSeconds": 1110.713,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1108.9813
+    },
+    {
+      "endTimeSeconds": 1115.8064,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1111.4092
+    },
+    {
+      "endTimeSeconds": 1123.837,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1116.3497
+    },
+    {
+      "endTimeSeconds": 1134.8557,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1124.3973
+    },
+    {
+      "endTimeSeconds": 1139.6434,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1135.9423
+    },
+    {
+      "endTimeSeconds": 1152.6316,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1143.0051
+    },
+    {
+      "endTimeSeconds": 1155.348,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1153.1749
+    },
+    {
+      "endTimeSeconds": 1162.0034,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1156.5026
+    },
+    {
+      "endTimeSeconds": 1165.8914,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1162.1052
+    },
+    {
+      "endTimeSeconds": 1174.0238,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1166.6554
+    },
+    {
+      "endTimeSeconds": 1181.2733,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1174.8218
+    },
+    {
+      "endTimeSeconds": 1184.7368,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1181.9354
+    },
+    {
+      "endTimeSeconds": 1189.4397,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1185.7216
+    },
+    {
+      "endTimeSeconds": 1197.5212,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1195.1273
+    },
+    {
+      "endTimeSeconds": 1200.0339,
+      "qualityScore": 0.67889184,
+      "speakerId": "S1",
+      "startTimeSeconds": 1197.5212
+    },
+    {
+      "endTimeSeconds": 1209.202,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1201.0696
+    },
+    {
+      "endTimeSeconds": 1212.0374,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1210.8489
+    },
+    {
+      "endTimeSeconds": 1215.5857,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1214.1765
+    },
+    {
+      "endTimeSeconds": 1219.1511,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1216.7572
+    },
+    {
+      "endTimeSeconds": 1224.9406,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1219.6095
+    },
+    {
+      "endTimeSeconds": 1232.0204,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1228.0475
+    },
+    {
+      "endTimeSeconds": 1238.2683,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1232.5127
+    },
+    {
+      "endTimeSeconds": 1243.7521,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1240.696
+    },
+    {
+      "endTimeSeconds": 1247.0968,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1245.6537
+    },
+    {
+      "endTimeSeconds": 1250.3905,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1248.5739
+    },
+    {
+      "endTimeSeconds": 1252.9202,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1251.3752
+    },
+    {
+      "endTimeSeconds": 1259.4058,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1253.9728
+    },
+    {
+      "endTimeSeconds": 1271.6129,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1261.4601
+    },
+    {
+      "endTimeSeconds": 1274.0068,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1271.9525
+    },
+    {
+      "endTimeSeconds": 1279.7114,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1274.8048
+    },
+    {
+      "endTimeSeconds": 1283.7521,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1280.8658
+    },
+    {
+      "endTimeSeconds": 1286.5365,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1284.3802
+    },
+    {
+      "endTimeSeconds": 1289.5416,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1287.3684
+    },
+    {
+      "endTimeSeconds": 1296.3837,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1290.6621
+    },
+    {
+      "endTimeSeconds": 1298.9644,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1296.944
+    },
+    {
+      "endTimeSeconds": 1304.2615,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1299.8472
+    },
+    {
+      "endTimeSeconds": 1307.0798,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1305.1104
+    },
+    {
+      "endTimeSeconds": 1310.4075,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1308.3531
+    },
+    {
+      "endTimeSeconds": 1314.584,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1311.8167
+    },
+    {
+      "endTimeSeconds": 1318.6078,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1315.2632
+    },
+    {
+      "endTimeSeconds": 1321.3583,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1319.0492
+    },
+    {
+      "endTimeSeconds": 1326.4347,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1321.7657
+    },
+    {
+      "endTimeSeconds": 1330.696,
+      "qualityScore": 0.89641273,
+      "speakerId": "S2",
+      "startTimeSeconds": 1326.4347
+    },
+    {
+      "endTimeSeconds": 1336.3328,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1332.8353
+    },
+    {
+      "endTimeSeconds": 1338.8965,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1336.6384
+    },
+    {
+      "endTimeSeconds": 1346.8081,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1340.3226
+    },
+    {
+      "endTimeSeconds": 1351.511,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1350.4584
+    },
+    {
+      "endTimeSeconds": 1357.8268,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1356.2139
+    },
+    {
+      "endTimeSeconds": 1364.4313,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1363.3446
+    },
+    {
+      "endTimeSeconds": 1377.0118,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1370.4075
+    },
+    {
+      "endTimeSeconds": 1378.9813,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1377.2496
+    },
+    {
+      "endTimeSeconds": 1385.8744,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1379.5586
+    },
+    {
+      "endTimeSeconds": 1389.6434,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1386.7233
+    },
+    {
+      "endTimeSeconds": 1393.2937,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1392.0543
+    },
+    {
+      "endTimeSeconds": 1395.8405,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1394.1086
+    },
+    {
+      "endTimeSeconds": 1400.5264,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1398.506
+    },
+    {
+      "endTimeSeconds": 1407.3005,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1401.0696
+    },
+    {
+      "endTimeSeconds": 1414.4991,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1409.8982
+    },
+    {
+      "endTimeSeconds": 1417.0968,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1415.9592
+    },
+    {
+      "endTimeSeconds": 1422.4448,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1420.0679
+    },
+    {
+      "endTimeSeconds": 1426.3328,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1424.3973
+    },
+    {
+      "endTimeSeconds": 1430.0848,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1427.9626
+    },
+    {
+      "endTimeSeconds": 1435.0594,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1431.562
+    },
+    {
+      "endTimeSeconds": 1439.6095,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1435.2123
+    },
+    {
+      "endTimeSeconds": 1443.5994,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1440.2037
+    },
+    {
+      "endTimeSeconds": 1448.0305,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1445.331
+    },
+    {
+      "endTimeSeconds": 1452.0543,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1448.3871
+    },
+    {
+      "endTimeSeconds": 1453.7861,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1452.4957
+    },
+    {
+      "endTimeSeconds": 1455.2632,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1454.2106
+    },
+    {
+      "endTimeSeconds": 1463.6842,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1457.64
+    },
+    {
+      "endTimeSeconds": 1466.5704,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1463.9728
+    },
+    {
+      "endTimeSeconds": 1469.8132,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1466.8931
+    },
+    {
+      "endTimeSeconds": 1473.5483,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1472.2072
+    },
+    {
+      "endTimeSeconds": 1480.1528,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1475.0764
+    },
+    {
+      "endTimeSeconds": 1482.8014,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1480.7301
+    },
+    {
+      "endTimeSeconds": 1489.9661,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1484.9745
+    },
+    {
+      "endTimeSeconds": 1493.4126,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1491.2224
+    },
+    {
+      "endTimeSeconds": 1495.8914,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1494.2615
+    },
+    {
+      "endTimeSeconds": 1499.2699,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1496.2649
+    },
+    {
+      "endTimeSeconds": 1508.6417,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1499.7284
+    },
+    {
+      "endTimeSeconds": 1513.6333,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1508.8115
+    },
+    {
+      "endTimeSeconds": 1518.421,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1514.3124
+    },
+    {
+      "endTimeSeconds": 1520.5942,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1519.3888
+    },
+    {
+      "endTimeSeconds": 1522.258,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1521.1715
+    },
+    {
+      "endTimeSeconds": 1528.2343,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1522.377
+    },
+    {
+      "endTimeSeconds": 1532.9712,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1529.1342
+    },
+    {
+      "endTimeSeconds": 1535.331,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1534.0747
+    },
+    {
+      "endTimeSeconds": 1539.202,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1537.3514
+    },
+    {
+      "endTimeSeconds": 1547.1307,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1539.5925
+    },
+    {
+      "endTimeSeconds": 1552.5127,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1548.1833
+    },
+    {
+      "endTimeSeconds": 1553.888,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1552.7675
+    },
+    {
+      "endTimeSeconds": 1556.5195,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1554.669
+    },
+    {
+      "endTimeSeconds": 1565.5857,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1558.0646
+    },
+    {
+      "endTimeSeconds": 1568.7267,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1565.9253
+    },
+    {
+      "endTimeSeconds": 1571.2563,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1569.0662
+    },
+    {
+      "endTimeSeconds": 1573.5824,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1572.3259
+    },
+    {
+      "endTimeSeconds": 1576.7911,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1575.2802
+    },
+    {
+      "endTimeSeconds": 1581.7147,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1579.219
+    },
+    {
+      "endTimeSeconds": 1586.5195,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1582.5127
+    },
+    {
+      "endTimeSeconds": 1591.1376,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1586.9949
+    },
+    {
+      "endTimeSeconds": 1604.9406,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1591.6469
+    },
+    {
+      "endTimeSeconds": 1608.5569,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1605.2632
+    },
+    {
+      "endTimeSeconds": 1612.1392,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1609.287
+    },
+    {
+      "endTimeSeconds": 1622.7164,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1613.4635
+    },
+    {
+      "endTimeSeconds": 1632.3429,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1622.9371
+    },
+    {
+      "endTimeSeconds": 1636.3667,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1633.4805
+    },
+    {
+      "endTimeSeconds": 1639.7623,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1637.4703
+    },
+    {
+      "endTimeSeconds": 1646.6384,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1642.292
+    },
+    {
+      "endTimeSeconds": 1650.0679,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1648.2512
+    },
+    {
+      "endTimeSeconds": 1652.309,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1650.4244
+    },
+    {
+      "endTimeSeconds": 1654.4652,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1653.1749
+    },
+    {
+      "endTimeSeconds": 1656.4517,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1655.331
+    },
+    {
+      "endTimeSeconds": 1664.0068,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1657.8948
+    },
+    {
+      "endTimeSeconds": 1667.9966,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1664.3973
+    },
+    {
+      "endTimeSeconds": 1672.0034,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1668.2173
+    },
+    {
+      "endTimeSeconds": 1674.3124,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1672.3939
+    },
+    {
+      "endTimeSeconds": 1678.7776,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1675.5178
+    },
+    {
+      "endTimeSeconds": 1685.348,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1682.5807
+    },
+    {
+      "endTimeSeconds": 1687.9966,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1685.7216
+    },
+    {
+      "endTimeSeconds": 1691.579,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1688.7946
+    },
+    {
+      "endTimeSeconds": 1704.2275,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1692.9371
+    },
+    {
+      "endTimeSeconds": 1706.6384,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1704.6859
+    },
+    {
+      "endTimeSeconds": 1727.4534,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1707.725
+    },
+    {
+      "endTimeSeconds": 1732.4109,
+      "qualityScore": 0.8902431,
+      "speakerId": "S2",
+      "startTimeSeconds": 1727.4534
+    },
+    {
+      "endTimeSeconds": 1737.3854,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1732.9371
+    },
+    {
+      "endTimeSeconds": 1741.0696,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1738.404
+    },
+    {
+      "endTimeSeconds": 1744.5161,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1742.6825
+    },
+    {
+      "endTimeSeconds": 1746.8931,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1744.618
+    },
+    {
+      "endTimeSeconds": 1752.5466,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1747.4023
+    },
+    {
+      "endTimeSeconds": 1762.8862,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1755.1613
+    },
+    {
+      "endTimeSeconds": 1764.652,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1763.3276
+    },
+    {
+      "endTimeSeconds": 1771.0526,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1765.9932
+    },
+    {
+      "endTimeSeconds": 1772.7504,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1771.511
+    },
+    {
+      "endTimeSeconds": 1783.9388,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1773.4126
+    },
+    {
+      "endTimeSeconds": 1789.6945,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1787.2325
+    },
+    {
+      "endTimeSeconds": 1794.5331,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1790.5093
+    },
+    {
+      "endTimeSeconds": 1798.1155,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1794.5331
+    },
+    {
+      "endTimeSeconds": 1805.9932,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1799.4736
+    },
+    {
+      "endTimeSeconds": 1807.691,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1806.6724
+    },
+    {
+      "endTimeSeconds": 1813.3276,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1808.5399
+    },
+    {
+      "endTimeSeconds": 1822.309,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1813.3276
+    },
+    {
+      "endTimeSeconds": 1828.2512,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1826.0101
+    },
+    {
+      "endTimeSeconds": 1831.6638,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1828.8965
+    },
+    {
+      "endTimeSeconds": 1833.9899,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1831.9525
+    },
+    {
+      "endTimeSeconds": 1835.9592,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1834.652
+    },
+    {
+      "endTimeSeconds": 1842.0883,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1836.5026
+    },
+    {
+      "endTimeSeconds": 1847.1477,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1842.7334
+    },
+    {
+      "endTimeSeconds": 1859.0833,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1848.8795
+    },
+    {
+      "endTimeSeconds": 1860.9338,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1859.3718
+    },
+    {
+      "endTimeSeconds": 1867.2325,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1861.477
+    },
+    {
+      "endTimeSeconds": 1873.9049,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1867.4023
+    },
+    {
+      "endTimeSeconds": 1876.3328,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1874.618
+    },
+    {
+      "endTimeSeconds": 1884.8727,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1876.8761
+    },
+    {
+      "endTimeSeconds": 1898.0815,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1885.45
+    },
+    {
+      "endTimeSeconds": 1900.7301,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1898.8455
+    },
+    {
+      "endTimeSeconds": 1906.9779,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1901.562
+    },
+    {
+      "endTimeSeconds": 1910.9678,
+      "qualityScore": 0.90384936,
+      "speakerId": "S2",
+      "startTimeSeconds": 1906.9779
+    },
+    {
+      "endTimeSeconds": 1917.8268,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1911.7997
+    },
+    {
+      "endTimeSeconds": 1920.0679,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1917.9966
+    },
+    {
+      "endTimeSeconds": 1929.8472,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1922.1902
+    },
+    {
+      "endTimeSeconds": 1936.129,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1930.017
+    },
+    {
+      "endTimeSeconds": 1945.9932,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1936.8422
+    },
+    {
+      "endTimeSeconds": 1949.8982,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1946.3328
+    },
+    {
+      "endTimeSeconds": 1955.9932,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1951.2054
+    },
+    {
+      "endTimeSeconds": 1957.9966,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 1955.9932
+    },
+    {
+      "endTimeSeconds": 1960.1018,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1957.9966
+    },
+    {
+      "endTimeSeconds": 1963.4296,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1960.3905
+    },
+    {
+      "endTimeSeconds": 1966.2649,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1963.5483
+    },
+    {
+      "endTimeSeconds": 1967.8778,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1966.8591
+    },
+    {
+      "endTimeSeconds": 1969.6095,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1968.5908
+    },
+    {
+      "endTimeSeconds": 1971.562,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1970.2207
+    },
+    {
+      "endTimeSeconds": 1975.382,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1972.1052
+    },
+    {
+      "endTimeSeconds": 1981.2733,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1977.3345
+    },
+    {
+      "endTimeSeconds": 1984.7198,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1981.7317
+    },
+    {
+      "endTimeSeconds": 1991.9185,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1985.1273
+    },
+    {
+      "endTimeSeconds": 1998.0135,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1992.7504
+    },
+    {
+      "endTimeSeconds": 2010.6621,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 1999.6434
+    },
+    {
+      "endTimeSeconds": 2013.888,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2010.815
+    },
+    {
+      "endTimeSeconds": 2019.8641,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2015.8064
+    },
+    {
+      "endTimeSeconds": 2024.4143,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2020.5773
+    },
+    {
+      "endTimeSeconds": 2032.8184,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2024.8387
+    },
+    {
+      "endTimeSeconds": 2043.2937,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2033.4465
+    },
+    {
+      "endTimeSeconds": 2044.9066,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 2043.5314
+    },
+    {
+      "endTimeSeconds": 2052.292,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2045.6367
+    },
+    {
+      "endTimeSeconds": 2055.1443,
+      "qualityScore": 1,
+      "speakerId": "S2",
+      "startTimeSeconds": 2052.9712
+    },
+    {
+      "endTimeSeconds": 2061.443,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 2055.8235
+    },
+    {
+      "endTimeSeconds": 2062.8184,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 2061.7996
+    },
+    {
+      "endTimeSeconds": 2066.6045,
+      "qualityScore": 1,
+      "speakerId": "S1",
+      "startTimeSeconds": 2064.2954
+    }
+  ],
+  "speakerCount": 2,
+  "timestamp": "2026-07-21T00:48:16Z",
+  "timings": {
+    "audioLoadingSeconds": 0.0460200309753418,
+    "embeddingExtractionSeconds": 12.42703092098236,
+    "modelCompilationSeconds": 8.282592058181763,
+    "postProcessingSeconds": 0,
+    "segmentationSeconds": 9.521145105361938,
+    "speakerClusteringSeconds": 0.4151700735092163,
+    "totalInferenceSeconds": 22.363346099853516,
+    "totalProcessingSeconds": 30.69195818901062
+  }
+}

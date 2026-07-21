@@ -1,0 +1,618 @@
+{
+  "model": "v2",
+  "speakers": [
+    "S1",
+    "S2"
+  ],
+  "segments": [
+    {
+      "speaker": "S1",
+      "startTime": 0.64,
+      "endTime": 55.6,
+      "text": "This is probably the yeah, this might be the first time in my career where it feels like all things are aligned to do work well, meaningful, it has direct impact and combined with high autonomy. I've had each of every category, but never all together. So, this is this is this is pretty dope. So, I just want to tell you my motivation right now. And I already know that in a perfect world, I would prefer to calmly just gather all the context and absorb everything before doing anything. I already know that. So I'm pushing against my norms. But I'm just going to tap people on the shoulder like yourself to gain this. This is not, I don't know this world. I don't know the procurement world. Hell, I'll",
+      "wordCount": 132
+    },
+    {
+      "speaker": "S2",
+      "startTime": 55.52,
+      "endTime": 73.84,
+      "text": "just pause you right here, real quick, on this thing. Okay, don't worry about it. I know it's not a worry, but what I'm trying to say is: trust me, Louise, myself, do not have this level of expertise. Like, do I know about procurement? Yes. Have I been working with procurement?",
+      "wordCount": 52
+    },
+    {
+      "speaker": "S1",
+      "startTime": 73.92,
+      "endTime": 156,
+      "text": "But you've been, okay, no problem. No problem. But you certainly know, like, you're motivated you're trying to build something, you're trying to unlock these dollars. Cool, that's good context for me. So, what I want to understand at a high level is the why, because what I eventually want to do is provide that to team members as they need to keep everybody unlocked. And I thought maybe some high-level questions. Yeah, give me your questions.. Give me your questions yeah. Do you have your I can't even shit? Hold on. Let me unlock, get off of this screen. Just stay right there. This way I can share my whole laptop with you. It's just easier because I have a stupid wide skirt. It's like 50 inches wide. Hold on. Wait a second. Okay and then let's get this going again. All right, all right, and now uh okay. Where is the let's let's share screen, let's just share everything in the world. Your Slack is accessing screen, yeah, who the hell cares?",
+      "wordCount": 174
+    },
+    {
+      "speaker": "S2",
+      "startTime": 157.20000000000002,
+      "endTime": 166.48000000000002,
+      "text": "Yes. Yeah, Slack doesn't work. We can use Zoom, whatever. It doesn't matter. Can you see this? I can see your s I can see. Yeah, okay, go for it. Let's",
+      "wordCount": 31
+    },
+    {
+      "speaker": "S1",
+      "startTime": 166.4,
+      "endTime": 171.2,
+      "text": "see. Okay, now let's just open this up. Okay, go for it.",
+      "wordCount": 12
+    },
+    {
+      "speaker": "S2",
+      "startTime": 171.20000000000002,
+      "endTime": 177.2,
+      "text": "And then I'll just. Yeah, hopefully, these end files are good for you guys. I'm just",
+      "wordCount": 16
+    },
+    {
+      "speaker": "S1",
+      "startTime": 178.16,
+      "endTime": 180.56,
+      "text": "trying to move fast. This is good. This is good.",
+      "wordCount": 10
+    },
+    {
+      "speaker": "S2",
+      "startTime": 180.56,
+      "endTime": 186.64000000000001,
+      "text": "So, actually, you have it, you have an older version now, too. Let me see. Is it the older version or is that",
+      "wordCount": 23
+    },
+    {
+      "speaker": "S1",
+      "startTime": 187.68,
+      "endTime": 189.44,
+      "text": "downloaded the most recent?",
+      "wordCount": 4
+    },
+    {
+      "speaker": "S2",
+      "startTime": 189.68,
+      "endTime": 191.36,
+      "text": "Oh, you did. Okay, no, you're good then.",
+      "wordCount": 8
+    },
+    {
+      "speaker": "S1",
+      "startTime": 191.76,
+      "endTime": 220.48000000000002,
+      "text": "And then, and then one more thing. Hold on, is this it? No, no, that's not it either. Frig. How do I get to the other? Wait, I want to open up, I want to open up just a little hello world thing that that we've done. Um this is what's deployed. Uh",
+      "wordCount": 53
+    },
+    {
+      "speaker": "S2",
+      "startTime": 222.4,
+      "endTime": 227.36,
+      "text": "Okay, can you see this? yeah. Louis sent this one to me.",
+      "wordCount": 12
+    },
+    {
+      "speaker": "S1",
+      "startTime": 227.6,
+      "endTime": 242.96,
+      "text": "yeah, yeah. Okay, so this is just scaffolded, hello world. But the only thing I'm bringing this up for is, generally speaking, this idea of an app switcher, right? Yep. Okay, cool. We're aligned. Okay, so then let me go back to your. Nope, that's not your thing.",
+      "wordCount": 48
+    },
+    {
+      "speaker": "S2",
+      "startTime": 242.96,
+      "endTime": 246.16000000000003,
+      "text": "Yeah, we're aligned on the app switcher concept, which is what I was trying to bring",
+      "wordCount": 16
+    },
+    {
+      "speaker": "S1",
+      "startTime": 246.32,
+      "endTime": 254,
+      "text": "the call. What I'm saying is, this whole thing, everything on the flow, is one of those apps. That's what we're calling Nirvana AI, right?",
+      "wordCount": 25
+    },
+    {
+      "speaker": "S2",
+      "startTime": 254.8,
+      "endTime": 292.88,
+      "text": "This is what I was trying to get out of the call. That's not necessarily true. So, what I was saying is, is Is Nirvana Hub as designed in this thing is actually just a page in the current experience. Right. Which I said there's three ways you can build this. You can build it on the Cure Mint, so it's like completely integrated. It could be built as a standalone, like an app switcher standalone thing, which has its cons. So it wouldn't look, the left nav bar would look different. If you come back and say, Yo, Z, all we can do is build it as a new app. I'll redesign this so that you don't get tabs that's on the left nav bar. Okay. Don't change it.",
+      "wordCount": 130
+    },
+    {
+      "speaker": "S1",
+      "startTime": 293.12,
+      "endTime": 306.24,
+      "text": "These, let's just assume this. I'd also prefer. But check this out. That means that these tabs up here, this brief actions agents, would end up being.",
+      "wordCount": 27
+    },
+    {
+      "speaker": "S2",
+      "startTime": 307.2,
+      "endTime": 309.12,
+      "text": "Yeah, they're left. They're left now.",
+      "wordCount": 6
+    },
+    {
+      "speaker": "S1",
+      "startTime": 309.12,
+      "endTime": 318.32,
+      "text": "Exactly. So then you've answered my question. Like conceptually, this is an idea. This is one, I'll call it an app, one idea. So let's just stick with that.",
+      "wordCount": 29
+    },
+    {
+      "speaker": "S2",
+      "startTime": 319.6,
+      "endTime": 333.92,
+      "text": "Well, right now, what I'm saying is it's integrated into our current experience. And the reason why I say that is because Nirvana Hub is not designed to be completely standalone because it needs to navigate to contracts and companies. I get",
+      "wordCount": 42
+    },
+    {
+      "speaker": "S1",
+      "startTime": 333.92,
+      "endTime": 372.72,
+      "text": "that. Which is the you were talking about the deep linking and stuff like that, and all of that so far sounds like more just technical speed bumps than it does definitional ones. Like, what is this thing? Here is, I'm going to sound silly and I'm going to sound dumb. I'm going to ask you dumb questions, right? But somebody's using this. Like, we're going to build this, and somebody's going to use this. Who is that somebody? Or who is the archetype that cares about all of this stuff on this page? Is it do you have?",
+      "wordCount": 99
+    },
+    {
+      "speaker": "S2",
+      "startTime": 372.72,
+      "endTime": 384.24,
+      "text": "Did you? Okay, hold on. Let me just find it for you. Do you have Did you you the uh have you been to the Churzel operating system before? Confluence page?",
+      "wordCount": 31
+    },
+    {
+      "speaker": "S1",
+      "startTime": 385.44,
+      "endTime": 400.48,
+      "text": "Let me see. I have this Confluence. What is this Confluence? Curment, Atlassian? Okay. No, hold on. Here. Here, some of what you got. Okay. Here's Z. You're somewhere. Here you are.",
+      "wordCount": 32
+    },
+    {
+      "speaker": "S2",
+      "startTime": 401.52,
+      "endTime": 430.88,
+      "text": "Is this it? Yep. Yep. Have you seen this before? No. Okay, cool. This is meant to be the central source of truth of how we Terzo think about things, how we design things. It has our principles, it has our processes, our rituals, our templates. You can see templates here, we're like a PPS and a rapid-style template, even our processes. But if you go on the left side, right? You'll see a section on who we serve.",
+      "wordCount": 79
+    },
+    {
+      "speaker": "S1",
+      "startTime": 431.2,
+      "endTime": 432.88,
+      "text": "Just click that, yes, yes, yes.",
+      "wordCount": 6
+    },
+    {
+      "speaker": "S2",
+      "startTime": 434,
+      "endTime": 482.96,
+      "text": "okay, and then click on the Turzo customer persona map. Now, check this out. now we have the list of personas tiered, prioritized. And then for every persona, you have a persona card of who they are, what goals do they have, pain points, jobs to be done. So, this is a good way of learning what customers really want to use Turzo for and do. This is helpful. So, yeah, you see, I put a little generated these like little The pictures little pictures, but you can see, like, oh, there's Priya, there's, yeah, somebody made fun of me. They're like, dude, your AI is generating too many white people. I'm like, dude, what do you want me to do, man? I'm not going to go and put some kids in DEI",
+      "wordCount": 133
+    },
+    {
+      "speaker": "S1",
+      "startTime": 483.84000000000003,
+      "endTime": 486.56,
+      "text": "AI. Get out of here. What",
+      "wordCount": 6
+    },
+    {
+      "speaker": "S2",
+      "startTime": 486.56,
+      "endTime": 490.8,
+      "text": "do you want me to do, man? There's some Latinas in there if you want. Yeah,",
+      "wordCount": 16
+    },
+    {
+      "speaker": "S1",
+      "startTime": 491.12,
+      "endTime": 500.56,
+      "text": "um, okay, is this perfect? This is this is super helpful. Plus, I can I can throw an agent at this. Um, okay, I'm just kind of thinking out loud.",
+      "wordCount": 30
+    },
+    {
+      "speaker": "S2",
+      "startTime": 500.64,
+      "endTime": 503.76,
+      "text": "That's what I suck all this stuff up, and I'm like, yo, these are my persona types.",
+      "wordCount": 17
+    },
+    {
+      "speaker": "S1",
+      "startTime": 505.36,
+      "endTime": 511.68,
+      "text": "Um, are these accurate, up-to-date, or whatever you want to call it? Like, this is generally in the ballpark. This is not outdated, right?",
+      "wordCount": 24
+    },
+    {
+      "speaker": "S2",
+      "startTime": 512,
+      "endTime": 519.12,
+      "text": "No, this is this is this should be. I've been using this, so it's it's it's my it's my cheat sheet for personas.",
+      "wordCount": 23
+    },
+    {
+      "speaker": "S1",
+      "startTime": 519.12,
+      "endTime": 529.6,
+      "text": "Yeah, dude, dude, okay, you're speaking my language. This is exactly what I needed because in order to build, I don't necessarily need design. Of course we need designs, but you can figure that out. Yeah, you want",
+      "wordCount": 38
+    },
+    {
+      "speaker": "S2",
+      "startTime": 529.6,
+      "endTime": 531.76,
+      "text": "to build it all based on people. Yeah. People are",
+      "wordCount": 10
+    },
+    {
+      "speaker": "S1",
+      "startTime": 531.76,
+      "endTime": 533.84,
+      "text": "based on what is this thing. We're building a product.",
+      "wordCount": 10
+    },
+    {
+      "speaker": "S2",
+      "startTime": 534.5600000000001,
+      "endTime": 537.04,
+      "text": "Understand what they what their goals are.",
+      "wordCount": 7
+    },
+    {
+      "speaker": "S1",
+      "startTime": 538,
+      "endTime": 539.12,
+      "text": "so let me go back to the bar. I try to",
+      "wordCount": 11
+    },
+    {
+      "speaker": "S2",
+      "startTime": 539.6,
+      "endTime": 557.9200000000001,
+      "text": "jobs to be done. You know, one thing that I don't have here that I want to do is on my list at some point is to create the user journeys and the journey map. That's extra work. And I was like, fuck it, I'll just wait for a proper UX designer to come here and do that stuff. But this is a good feed, I think, for everything we're doing. So,",
+      "wordCount": 72
+    },
+    {
+      "speaker": "S1",
+      "startTime": 557.92,
+      "endTime": 573.44,
+      "text": "who so? Are you saying that those various archetypes here, these personalities, each of them may have a different vested interest in Nirvana AI. Okay.",
+      "wordCount": 25
+    },
+    {
+      "speaker": "S2",
+      "startTime": 573.76,
+      "endTime": 680.16,
+      "text": "Okay, go back to the persona map. Just to give you kind of an example here, let's just take, let's go take a couple examples here. Okay, so go to the chief financial officer, the first one. Okay. Right? Okay. So they're quote at the top. I need to know what we owe, what we're leaking, and what we can cut. And I need that in minutes, not months. So, what is she saying? She's saying, I need to fucking save myself some money, right? Like, find me the places where I can save money. This is where a lot of the agents we have will go and identify: yo, you're leaking 20 million bucks here. Yo, you got a risk of 30 million dollars here. This is what the chief, the CFO is gonna be like, holy shit, you're making my job way easier. So, if you look at her goals, she wants to reduce her spend. She wants to, you know, understand, you know, link every dollar of spend to the contracts, the governance, so that there's a one-to-one mapping. There's no overbilling. Her pain points are she's getting overbilled. She doesn't understand how to link everything together. She doesn't understand how to actually go and find what they're obligated for. So if the contract said there's rebates, or let's say I negotiated with Microsoft and said, yo, if you use a million dollars worth of Azure Compute, the next million dollars I'll give you at a 20% discount. Now, if you use five million dollars, I give you 40% discount. That's pretty common language. That's all in the contracts. Guess what? No one is picking that shit up. So, pain point. How do I know what I actually, you know, what am I obligated for? Imagine you come back to your CFO, like, yo, we contracted a 40% discount. Are you using it? And she's like, no, like, fuck, that's you should be saved millions of dollars here, man.",
+      "wordCount": 332
+    },
+    {
+      "speaker": "S1",
+      "startTime": 680.16,
+      "endTime": 685.84,
+      "text": "These pain points translate to insights we should give them to solve those pain points.",
+      "wordCount": 15
+    },
+    {
+      "speaker": "S2",
+      "startTime": 685.84,
+      "endTime": 703.7600000000001,
+      "text": "Exactly. Exactly. And so, what I put here is the pain points and the jobs to be done. Show me our total financial exposure. Which contracts are created? Now, it's not meant to be an exhaustive list. No, I get it. What you have to do is take this as a seed, and if you want, just dump it back into Claude and say, Yo, give me an expansive list here. You can do",
+      "wordCount": 74
+    },
+    {
+      "speaker": "S1",
+      "startTime": 703.76,
+      "endTime": 724.24,
+      "text": "that. No, this is great. This is super helpful. So, then I guess this is more a a personal design question. As you were thinking about like Nirvana Hub, were you leaning towards a specific archetype? Like, does Nirvana? Yeah, go scroll up, scroll",
+      "wordCount": 44
+    },
+    {
+      "speaker": "S2",
+      "startTime": 724.24,
+      "endTime": 748.8000000000001,
+      "text": "up. Yeah, see, the wizard is where you get. Actually, see, you have an older version. I'll dump you a newer version, but the idea. No, actually, sorry, you have the new version. My bad. But you see, here, the wizard actually tells you: hey, ask, what's your role, bro? Right? And then what do you care about? Do you care about your entire portfolio or do you care about a specific set of your performance,",
+      "wordCount": 76
+    },
+    {
+      "speaker": "S1",
+      "startTime": 748.8000000000001,
+      "endTime": 800.0000000000001,
+      "text": "bro. You blow my mind. Hold on, hold on. I gotta be able to say this. So, based on, in theory, based on the wizard, we would generally identify the persona and then the page and the widgets should match in theory to serve that persona. Exactly. Okay, so this has just serviced a really huge engineering thing. Not huge in terms of work, but meaning widgets aren't just a collection of divs, pixels, and font sizes, there can be metadata attached to these things that showcase, that communicate what personas they help. Or if you want to help",
+      "wordCount": 99
+    },
+    {
+      "speaker": "S2",
+      "startTime": 800.5600000000001,
+      "endTime": 865.84,
+      "text": "not only with personas, they help, but what they're looking for. Go back to the wizard. Right? So, the wizard gives you a couple things. It gives you the persona type, it gives you a filtered view. Because if you think about it, there's going to be hundreds and thousands of actions. You don't want to see all that shit. You're like, I'm not responsible for the freaking real estate department. So, guess what? Tell me you're you just want it? Great, boom, boom, boom. Now everything's filtered and contextual to you. Now go to the next screen. Not only that, but now you tell me what pain points you really care about. You want to save money, I want to reduce my risk. That further filters it down and boom, gets you exactly what you want from the list. Now, this is a wizard for doing it. In an amazing world, we actually can take this data, can figure out what people are doing, and then eventually in real time use AI to figure this shit out for you. But you know, that's extra data science and machine learning work. Fuck it, they do the wizard, easy shit to go do.",
+      "wordCount": 202
+    },
+    {
+      "speaker": "S1",
+      "startTime": 865.84,
+      "endTime": 882.1600000000001,
+      "text": "The wizard. I'm even thinking, like, in some places, you might be able to just salt and pepper AI like this. Like, oh, there's an option you didn't think of, free form. And then as you move to the next one, it takes our pre plus the free form, whatever. Yep, okay. Okay, I see that I get the",
+      "wordCount": 59
+    },
+    {
+      "speaker": "S2",
+      "startTime": 882.16,
+      "endTime": 897.84,
+      "text": "vision. We could even say, hey, you know what? Um, prompt, just type in what you want, and we'll figure it out for you. Like, I'm that feedback is totally welcome, too, right? Like, there's ways to do this all. Yeah, I don't want to over too much free form.",
+      "wordCount": 50
+    },
+    {
+      "speaker": "S1",
+      "startTime": 898.48,
+      "endTime": 904.32,
+      "text": "You know, people may not know what they want. I like this. I like this, and then we could just kind of AB and",
+      "wordCount": 24
+    },
+    {
+      "speaker": "S2",
+      "startTime": 905.36,
+      "endTime": 920.8800000000001,
+      "text": "yeah, exactly. That's what I was thinking. That's why I landed on this one. I see. So, that's why that's a first-run experience. Once it's first run, then you can do the rest of stuff, but then don't worry, you can always go and personalize your brief again, and then you can rerun the wizard for a different",
+      "wordCount": 58
+    },
+    {
+      "speaker": "S1",
+      "startTime": 920.88,
+      "endTime": 927.36,
+      "text": "thing. yeah, okay. Um, and I heard you say in the meeting that we don't actually have",
+      "wordCount": 17
+    },
+    {
+      "speaker": "S2",
+      "startTime": 927.6800000000001,
+      "endTime": 954.88,
+      "text": "this, this, this piece. This is why I need to go get Griff and his team. Be like, yo, dude, these customers are painting the asses. They don't know what the fuck they're doing. You're dealing with, by the way, every persona type here are pretty dumb. Okay. Got to design for the freaking, the most idiotic person you can imagine. Right. And if we do our design right, then it will work. Procurement people are not smart, bro. Okay, no, They're not.",
+      "wordCount": 83
+    },
+    {
+      "speaker": "S1",
+      "startTime": 955.28,
+      "endTime": 982.6400000000001,
+      "text": "is Well, whether they are or aren't, we have the technology and we should be doing as much lifting as possible. Anybody would want that. So, correct. Okay, I don't even. Okay, let me. That's good. That's actually good enough for right now. But I think the challenge, one of the challenges would be actually getting this data. And I'm curious.",
+      "wordCount": 61
+    },
+    {
+      "speaker": "S2",
+      "startTime": 983.52,
+      "endTime": 1012.96,
+      "text": "So, for this one, I would say, okay, let's just do this. Let's push on Griff and his team. This is what I want them to do. Come up with a taxonomy that can be broadly applicable. Apply that taxonomy to everybody's portfolios. Then customers could go and customize it and configure it themselves. But at least there's a seed class taxonomy, and then from a UI perspective, you don't care. You just suck up the taxonomy and you just provide the UI to go and have people select that taxonomy.",
+      "wordCount": 91
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1013.2,
+      "endTime": 1018.72,
+      "text": "yeah. This taxonomy would live somewhere in a database. This is just a query call for the UI.",
+      "wordCount": 18
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1020.96,
+      "endTime": 1021.6,
+      "text": "Exactly.",
+      "wordCount": 1
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1021.6,
+      "endTime": 1030.08,
+      "text": "Yeah, but no, but that's helpful. That's helpful. In your estimation, so these sales guys, Daniel, or was it Daniel or Heights?",
+      "wordCount": 22
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1030.48,
+      "endTime": 1032.1599999999999,
+      "text": "Daniel, Brody, Spencer, yeah.",
+      "wordCount": 4
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1032.8,
+      "endTime": 1062.8,
+      "text": "Tell me, tell me, sanity check. If I understood right, having something like this live to play with, so if I could make where was it, this AI, right? This basic hello world, even though it's still dummy data, have all of this. Maybe it looks a little different, maybe it doesn't, whatever, but basically, like, have this so that they can click around during a demo, that would be incredibly useful. Yes.",
+      "wordCount": 73
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1063.1200000000001,
+      "endTime": 1076.8,
+      "text": "Okay. Okay. Yeah, 100%. In fact, if you make it even more real, which is, you know, A, start with dummy data, then B, plug in with Moe's back end piece. 100%. And then congratulations.",
+      "wordCount": 35
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1076.8,
+      "endTime": 1088.6399999999999,
+      "text": "But when we say plug in with Moe's back-end piece, this goes back to those two. Wait, let me say this. Where are they? This goes back to either Nirvana test data or",
+      "wordCount": 33
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1089.76,
+      "endTime": 1124.24,
+      "text": "Well, okay, there's two pieces of plugin demo. There is the actual portfolio data, which should be real data, and then there is running the agents on top of it to get what I call Mohs data, right? Call agent agentic data, like the actual derived calculated data, and then there's the UI representation, right? So, you kind of need the other two layers. So, most stuff agents only are good, but they'll be even better when you have real data behind it. The real data is using one of those two test tenants.",
+      "wordCount": 94
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1124.24,
+      "endTime": 1155.84,
+      "text": "Yes, that's all I'm saying. Okay, yeah, yeah, yeah. I got to get Luis to unlock me on that. But okay, no problem. So we could plug Moe's APIs plugged into one of these tenants would equal a live working demo. Okay, all right, this is helpful. This is helpful, and then I cannot right now even begin to start chewing all the rest. Let me just get started there. But this is crazy helpful.",
+      "wordCount": 75
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1156.48,
+      "endTime": 1196.5600000000002,
+      "text": "Yep. Hopefully these screens make. I mean, I'm looking at you guys too as experts. Again, I'm tweaking as much as I can with a proto, like with a vibe design tool. Pencil is actually pretty good. You see it, it's actually pretty good, right? Like, especially if you use impeccable style and it calms it down for some of the UI. What is that? AI slow. What's that? Yeah, go to impeccable.style as a website. Yeah, it's like a skill that somebody created that helps calm down Flawed. Okay. I'm sure there's other ones out there too that",
+      "wordCount": 99
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1197.76,
+      "endTime": 1200.72,
+      "text": "the missing design vocabulary for agents.",
+      "wordCount": 6
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1201.04,
+      "endTime": 1239.28,
+      "text": "Exactly. It's just identifying anti-patterns and AI slot patterns, and then it tries to correct or prevent it. Sure. Okay, whatever, whatever, anyways. My point is, hopefully, the flows and designs make sense to you. You get excited about it. If you have feedback, please let me know. No, this was this is exactly what I was looking for, dude. Yeah, my personal take on this stuff is like, if we do this shit, god damn. Like, I don't know who else does this kind of stuff, right? Like, who does this in actually, is it impactful for the business. Sure.",
+      "wordCount": 101
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1240.56,
+      "endTime": 1253.3600000000001,
+      "text": "I mean, not that I'm trying to buy into a hype sales pitch or something, but it does, and I'm certainly naive about this stuff, but this just seems like a no-brainer.",
+      "wordCount": 32
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1253.3600000000001,
+      "endTime": 1314.96,
+      "text": "Like, no, a no-brainer, dude. Imagine this is what I'm trying to get at. This is what I was trying to tell you before even you interviewed. Imagine you have Cisco, like, imagine Cisco was the new customer. They didn't give, they gave us, let's say, a billion dollars worth of their contracts. We suck it up. Sucks it all up. All right, amazing. Now we have all this fucking data. Now we run the agents on top of it, boom. And now we spit out this hub. It's like, yo, you gave us a billion dollars worth of your contracts. That's like 10,000 contracts, whatever it is. And from that, we identified $80 million in savings, $40 million in risk mitigation, and $30 that you can govern and control better. And here are the steps you can take to go and fix it all up. Here you go. Yeah. Who's saying no to that? Who's going to say no to that, bro? Nobody. Yeah. Nobody. Even if we're like 50% accurate on it.",
+      "wordCount": 174
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1314.96,
+      "endTime": 1325.84,
+      "text": "So, help me understand. Why did these two Luma and the other one not sign? But we do have the extension. I get it. But how come they",
+      "wordCount": 28
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1327.04,
+      "endTime": 1508.72,
+      "text": "Again, put yourself in the shoes of a five-year-old kid. Okay. You give a five-year-old kid access to Turzo that we have today. They're going to be like, yo, dude, what the fuck do you want me to do here? Right? like, let me just share my screen just to make this real proof point here. I know you've used the product, but you know, whatever, just make it really clear and crisp. Um, sure, let's go this one. All right, so I log in okay, lots of charts. What does this mean? Now I have to think. Okay, 7.59 million is being expired. Well, they still have total active. Okay, I guess that's just telling me how many active companies are. Okay. How many active companies, all right. Uh, all right, this was interesting. 46 again, I gotta think about it every single chart, and then I say to myself, All right, what do you want me to do? Now go back to the personas map that we have, right? R rightight,. it's the job to be done. I want to go figure out my cost savings. What do I do to go figure that out? Oh, termination eligible. Oh, this is interesting. It's not even clickable. All right. And even I get the click, I'm like, what do I do there? Then I go to the contracts page itself. All right. It's a whole list of contracts here, man. What do you want me to do with this thing? I go click on a contract. There's some extra data here. My point is, there is a tremendous amount of information overload, and it's not that this data is not good, it's good, but it's not accomplishing your job easily. You got to be nerd, analyst nerd to go through this stuff and then find the nuggets in here to go get this stuff. Can you find it? Yeah, absolutely. There's 100% you can find things to go do this, right? Um, yeah, they're probably this tenant was not the best. Go to the demo one, but my point is: yeah, I could go here, right? I could go click on these things, I could go click on a demo, I can see this shit. and And you know, some of this stuff to get really cool stuff is here. This one, this one is this one's new built. This is the one that they've just built with a bunch of data. So, this is actually really good data. And if I go into here, even on this one, as I go click Salesforce, I'm right, I can see my contract commit over time, I can see my spend data. There's a lot of cool stuff here, but it doesn't help me get my job to be done. Nirvana will help me get a lot of the way there, but still I need to think about it and get my way down there. If we have the Nirvana hub now, smashing through this stuff, I know exactly what job to be done, and then I can go do it. That's the difference. So, Lumen just wants that, man. You just have to spoon-feed them the amazing shit there to get them to the exciting spot.",
+      "wordCount": 546
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1508.96,
+      "endTime": 1528.88,
+      "text": "Okay. It's still wild to me. Like, maybe this is just the way business works. It's still wild to me for a business that deals with multi-millions of dollars to even have the potential that, hey, there might be tons of savings in here, but because it's so complex, I'm not going to bother. That just sounds wild to me.",
+      "wordCount": 60
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1529.52,
+      "endTime": 1692.32,
+      "text": "You're absolutely right. If I was Lumen leadership, I'd fire these guys. Like, what the fuck are you doing? All right, so I'm not crazy. No, you're not crazy, dude. Listen, I'll tell you how I operate, dude. I have like one mode. That's the fucking snash mode, right? Let's fucking go do it. So when I see people who are like, It's your job to go do it, and you're telling me I don't want to go do the job because it's too complicated. My first reaction is, Who the fuck are you, man? What the fuck are you doing? Yeah, right. The second thing I have here, and this is motivation for myself. I'm like, all right, Lumen, you guys are pissing me off here with this, like going back and forth, making my life more difficult. But I'm like, okay, challenge accepted. I'll make this so easy. Five-year-old can go do it, and I'm going to smile when have you ever seen the movie Office Space? No. No? Okay. This is an older movie where it's a pretty funny movie. It's basically these consultants come into this company and they go and interview everybody. Like, so tell me, what exactly do you do here? And everyone's like, giving you their perspective. What they're doing. One guy was like, Okay, I take requirements from the customer and I bring them to the to the to the uh to the engineers and so what do you mean by bring i you physically go give it to them uh no sometimes but no sometimes i i i uh uh my my secretary does it. I'm like, wait, wait. So, your job is just to give the requirements to the engineers. That's all you do. And then the guy started going back. He was realizing he's going to get F with his consultants to fucking fire his ass. But this is essentially what's going to happen. So, if we provide all these guys to work, like, dude, what do you do? Well, I open up Turzo, and Turzo tells me what to do, and I click on the buttons. So, what exactly do you do, bro? I click on the buttons. So a monkey can do your work. No, yeah, dude, these guys. I'm gonna tell you right now, just the secret sauce on it, whether you like this or not, this is the reality. These procurement departments are freaking huge. These enterprises are massive. These people want to fire three-quarters of the people. There's just useless stuff that they're doing. And then you get people sitting in Lumen collecting a paycheck, not doing, there's like a retirement fund for them, not doing shit. And they're complaining with us they don't want to go do analysis work to go figure these things out. Guess what? As soon as we deliver all this stuff, it's going to be so easy, they can they're gonna fire a bunch of their people, and then that's it's just really funny to me. You complain about not wanting to go do your work, but then when the AI does the work for you, that you can't complain about it firing you because what did you do?",
+      "wordCount": 540
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1692.96,
+      "endTime": 1727.36,
+      "text": "Yeah, I do get nervous, not nervous, but a concern would be if we try to make the product fit for everybody. And too much, you know, customization is multiplication. It's exponential, right? One times two times two times two times, and the exponential just keeps going. I think that's definitely something to just keep aware of. I don't know if this makes sense, if this question is even valid, but at a point, it's",
+      "wordCount": 75
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1728.56,
+      "endTime": 1794.48,
+      "text": "which is: you know, when you look at the agents or the categories of different things, each of those agentic categories that we have that we're implementing can target one or more of their persona types, so not all of them. So that's one way to mitigate. So, what we could do to keep these things simple is like for different categories, they're targeting different persona types, and we tweak it just for those persona types. So, you're already doing it that way. Plus, if you're targeting risk exposure versus cost savings or cost takeout, that's another way to mitigate it exactly. So, the challenge here will be tweaking the agents and the outcomes of the agents so that, like you said, we're not bullshitting, right? It's trustworthy and good. That's going to be a hard piece. I anticipate that we're going to have to go back and forth multiple times. The good news is, we got people like Jason and Daniel who are experts in this area who can call out bullshit. And this is why we need the front end to be done so that we can start testing and validating this stuff faster.",
+      "wordCount": 196
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1795.28,
+      "endTime": 1813.6,
+      "text": "yes. If we have an Uber module, module, God, I can't say. If we have an Uber modular front end, that might be too much freedom. But you know what? We'll figure it out. We're going to start somewhere.",
+      "wordCount": 39
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1813.92,
+      "endTime": 1842.8,
+      "text": "Figure it out. I think, you know, I'll lean on you guys. You guys have full freedom of what you want. Now, the hub is again, it's not a fully Um, fully encapsulated, like just product by itself because it has some link out, but cost intelligence and you know, the AI CLM stuff is definitely a standalone product.",
+      "wordCount": 59
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1843.3600000000001,
+      "endTime": 1847.04,
+      "text": "right. No, that's fine, but we're going to start with the Nirvana",
+      "wordCount": 12
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1848,
+      "endTime": 1867.44,
+      "text": "hub. Yep, totally, totally. We're aligned. Yeah, we're aligned. So, what I think is that you guys party on this stuff, I think, you know, the challenge for from you guys you guys is Brody and those other sales guys were like, yo, dude, if you get something for next week, you know, is this something they can play with? That would be sweet for them. Even if it's",
+      "wordCount": 69
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1867.44,
+      "endTime": 1907.04,
+      "text": "I can't get it by Monday, but but I but now this conversation has totally unlocked me where I know how to approach this wizard because I understand what it's doing. This is tied to these archetypes. I didn't even know they existed. I was hoping that, like, this is a question I've been asking. This is perfect. And then the idea of showing a bunch of, you know, relevant information based on that thing. Like, you know, obviously a demo, we' justll spit out a bunch of widgets and whatnot, and we'll make it look sexy. But, um, that's that's helpful. And then, you know what? We'll cross the next bridge when we get there. Let me just bang that out as quickly as I can. Digest",
+      "wordCount": 128
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1907.1200000000001,
+      "endTime": 1930.0800000000002,
+      "text": "all the stuff, you know,, su suckck it all this stuff up into your your AI so it learns about all these things. And let me know if there's any things I can do to help more on this stuff. But But yeah, again, I had to learn a bunch of the stuff like you on these things, and that's how I got into it, you know.",
+      "wordCount": 67
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1930.08,
+      "endTime": 1936.8,
+      "text": "All right, all right. This is this is much appreciate it, dude. I'm sure we're going to have more conversations, but I have what I need right now.",
+      "wordCount": 28
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1936.8,
+      "endTime": 1955.76,
+      "text": "All right, great. Yeah, looking forward to you smashing through this, man. I think everyone is excited. I think, you know, I've been telling people: just wait, wait until what the PED org is cooking. And once we deliver this shit, I think it's going to shock the crap out of this company, our customers, and our investors. They're going to be like, What the fuck?",
+      "wordCount": 66
+    },
+    {
+      "speaker": "S1",
+      "startTime": 1956,
+      "endTime": 1957.92,
+      "text": "I hope so, man. I hope",
+      "wordCount": 6
+    },
+    {
+      "speaker": "S2",
+      "startTime": 1957.92,
+      "endTime": 2043.6000000000001,
+      "text": "so. Let's go.. All All right right. Yeah, let's go, man. It's challenge, challenge accepted. I mean, this is, you know, just to give you kind of my take on this, is, you know, I've had a long career, and it's very hard when you're working in different places. You're getting all this like you're so restricted in your zone in what you can do. And if you try to flex, sometimes you get your hand slapped on the flex. Like at Coinbase, I was trying to flex a bunch of shit, and then you know, depending on my bosses or my leaders, I get like a lot of flexibility, and then some folks are like you know, restrictive on it. Like, when I was trying to push us on the Coinbase developer platform piece. I was like pushing it to To big-time degrees, but then I got some people on the leadership side were like, no, no, just WAS, WAS, you know, wallet as a service piece. I'm like, guys, we're more than that. People can't. The problem is, there's not a lot of people who can do visionary thinking where they're like, think beyond. People have a fog of war in front of them, and they just can't go past that fog. And so, I've made it my mission in my career to be like, fuck this fog, just go break it, and then think really big, and then work backwards from the bigness, right? And just come back down. Yeah, so that's how I operate. I'm like, fuck it, just go smash big, and when we smash, I'm gonna. I'm talking about like leapfrog the shit out of everybody. So everybody's like, What the where the hell do these guys come from?",
+      "wordCount": 295
+    },
+    {
+      "speaker": "S1",
+      "startTime": 2043.6000000000001,
+      "endTime": 2045.2,
+      "text": "I'm I'm with it, brother.",
+      "wordCount": 5
+    },
+    {
+      "speaker": "S2",
+      "startTime": 2045.68,
+      "endTime": 2055.2799999999997,
+      "text": "That's how I operate. So that's what I'm doing here with us, which is like, guys, just deliver this thing, smash it back. No customers can complain about this stuff.",
+      "wordCount": 30
+    },
+    {
+      "speaker": "S1",
+      "startTime": 2055.28,
+      "endTime": 2068.16,
+      "text": "Right. Right. Okay. This is perfect context. This is exactly what I'm after. Let's see what we can cook and how fast we can cook. All right, man. Appreciate you, dude. Thank you very much. All right, man. Later.",
+      "wordCount": 39
+    }
+  ]
+}

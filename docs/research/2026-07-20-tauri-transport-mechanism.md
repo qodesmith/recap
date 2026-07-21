@@ -182,7 +182,85 @@ The prior note (`2026-07-20-client-server-state.md`) predates #7 and assumed a *
 
 ---
 
-## 8. Sources
+## 8. Chosen shape — Option A: `Channel.onmessage → setQueryData` (no separate store)
+
+**Decision (HITL, resolved 2026-07-20):** the pushed pipeline deltas land in **TanStack Query** via `setQueryData`. **No Jotai / separate client store** is introduced. Rationale below; this section records the concrete shape so it is not re-derived.
+
+**Why A over B (a Jotai atom fed by the Channel):** both write the same ~40-line bridge (`onmessage → setQueryData` vs `onmessage → store.set`), so B is not less code. The deciding factor is the *other* traffic on the Channel. The stream carries two kinds of frame (§2, per #7): the ephemeral **progress scalar** (replace-latest — genuinely atom-shaped in isolation) **and** the terminal **`track_done` + file-pointer** frame, which hands off to a *cached server read* (the transcript file). With A that handoff is **query → query** — a delta flips a field, and a downstream `useQuery` keyed off that field reads the file with `enabled: status === 'done'`. With B, `status` lives in an atom while the transcript lives in Query, so the enabling condition crosses the store→cache seam and you bridge a **second** time. One logical thing (server-authoritative pipeline state, per #7) then has one home instead of two. A's only real cost — `setQueryData` patching feels marginally more manual than an atom's `.set` — does not outweigh that.
+
+**Reducer — one function, all frame kinds:**
+
+```ts
+type PipelineState = {
+  tracks: Record<TrackId, {
+    progress: number
+    status: 'queued' | 'running' | 'done' | 'error'
+    transcriptPath?: string           // arrives on track_done
+  }>
+}
+
+type Delta =
+  | { kind: 'progress';   trackId: TrackId; progress: number }
+  | { kind: 'track_done'; trackId: TrackId; transcriptPath: string }
+  | { kind: 'error';      trackId: TrackId; message: string }
+
+function applyDelta(prev: PipelineState, d: Delta): PipelineState {
+  const cur = prev.tracks[d.trackId]
+  const next =
+    d.kind === 'progress'   ? { ...cur, progress: Math.max(cur.progress, d.progress) } // monotonic → never regresses
+  : d.kind === 'track_done' ? { ...cur, status: 'done', progress: 100, transcriptPath: d.transcriptPath }
+  :                           { ...cur, status: 'error' }
+  return { tracks: { ...prev.tracks, [d.trackId]: next } }
+}
+```
+
+**Subscription hook — snapshot seeds the cache, Channel patches it:**
+
+```ts
+function usePipeline(recordingId: RecordingId) {
+  const qc = useQueryClient()
+  const key = ['pipeline', recordingId] as const
+
+  useEffect(() => {
+    let disposed = false                       // §8-of-prior-note StrictMode / unmount guard
+    const channel = new Channel<Delta>()       // registers SYNCHRONOUSLY (§3a)
+    channel.onmessage = (d) => {
+      if (disposed) return
+      qc.setQueryData<PipelineState>(key, (prev) => prev && applyDelta(prev, d))
+    }
+    // §5 race fix: subscribe_pipeline accepts the Channel AND returns the snapshot in one round-trip
+    invoke<PipelineState>('subscribe_pipeline', { recordingId, channel })
+      .then((snapshot) => {
+        if (disposed) return
+        qc.setQueryData<PipelineState>(key, (prev) => mergeSnapshot(prev, snapshot)) // merge, don't clobber
+      })
+    return () => { disposed = true; invoke('unsubscribe_pipeline', { recordingId }) }
+  }, [recordingId])
+
+  return useQuery<PipelineState>({ queryKey: key, staleTime: Infinity }) // Channel keeps it fresh; no refetch
+}
+```
+
+**The `track_done` → transcript handoff (the reason A wins) — query → query:**
+
+```ts
+function useTranscript(recordingId: RecordingId, trackId: TrackId) {
+  const { data } = usePipeline(recordingId)
+  const track = data?.tracks[trackId]
+  return useQuery({
+    queryKey: ['transcript', trackId],
+    queryFn: () => invoke('read_transcript', { path: track!.transcriptPath }),
+    enabled: track?.status === 'done',         // flips on automatically when track_done lands
+  })
+}
+```
+
+**Gotchas A does *not* remove (own these explicitly):**
+- **Channel lifecycle is on you.** `queryFn` has no teardown hook, so the subscribe/unsubscribe lives in the effect, not the query. In StrictMode the effect runs twice → two `subscribe_pipeline` calls; Rust must dedupe/replace by `recordingId` (the first cleanup's `unsubscribe` covers the dev double-mount).
+- **Snapshot-vs-delta race** still needs a non-regressing merge — trivial because progress is monotonic (`Math.max` in both `applyDelta` and `mergeSnapshot`), so a late-resolving snapshot can never overwrite a newer delta.
+- **Termination is not surfaced** to `onmessage` (§3d) — "done" must be an explicit `track_done` frame, which it is above.
+
+## 9. Sources
 
 Primary throughout.
 - Tauri v2 docs: [calling-frontend](https://v2.tauri.app/develop/calling-frontend/), [calling-rust](https://v2.tauri.app/develop/calling-rust/).

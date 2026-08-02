@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0b0d10;
+  --color-ink-2: #14181d;
+  --color-ink-3: #1c2229;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: var(--color-ink);
+  color: #e6e9ee;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, 'SF Pro Text', Inter, sans-serif;
+  overflow: hidden;
+}
+
+/* Prototype-only: keep native selection visible against the dark UI (Variant B's
+   export-a-selection affordance depends on it). */
+::selection {
+  background: rgba(125, 211, 252, 0.35);
+}
+
+.proto-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.proto-scroll::-webkit-scrollbar-thumb {
+  background: #2a323c;
+  border-radius: 999px;
+}

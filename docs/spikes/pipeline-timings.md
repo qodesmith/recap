@@ -2,18 +2,18 @@
 
 **Issue:** [qodesmith/recap#19](https://github.com/qodesmith/recap/issues/19)
 **Date:** 2026-08-03
-**Verdict:** the unreportable span is **~2 % of a run, not 50 %**. #13's phase weighting was wrong by an order of magnitude in the direction that makes its design *safer*, not riskier — but two structural assumptions underneath it are wrong and need correcting.
+**Verdict:** the unreportable span is **~2 % of a run, not 50 %**. #13's phase weighting was wrong by an order of magnitude in the direction that makes its design *safer*, not riskier — but two structural assumptions underneath it are wrong and need correcting. Separately, #18's feared over-splitting **did not occur** on any recording whose true speaker count is known; the spurious Speakers that do appear come from **dead air**, not from splitting a human.
 
 Throwaway spike measurement. Machine: Apple Silicon, macOS 26.5.2, Xcode CLT Swift 6.3.3. FluidAudio cloned at HEAD 2026-08-03, release build, patched with `RECAP_TIMING` stderr instrumentation (see [Instrumentation](#instrumentation)).
 
 ## Samples
 
-| name | duration | speakers found | note |
-|---|---|---|---|
-| `zeyad 01.mov` | 34.5 min | 2 | the #10 sample — 2-person interview |
-| `project aurora 1.mkv` | 58.6 min | 3 | ground truth not established |
-| `initial talk about embedded ai.mkv` | 83.3 min | 6 | ground truth not established |
-| `07-19-2026-all-your-trust.mkv` | 109.4 min | 4 | ground truth not established |
+| name | duration | true speakers | found | note |
+|---|---|---|---|---|
+| `zeyad 01.mov` | 34.5 min | **2** | 2 ✅ | the #10 sample — 2-person interview |
+| `initial talk about embedded ai.mkv` | 83.3 min raw → **49.75 min real** | **4** | 4 ✅ | the recording kept rolling ~33 min past the end of the conversation; only the first 49:45 is content |
+| `project aurora 1.mkv` | 58.6 min | not established | 3 | timing data only |
+| `07-19-2026-all-your-trust.mkv` | 109.4 min | n/a | 4 | **excluded from measurement 3** — a church service: one dominant speaker plus a singing worship team. Not conversational audio; retained for timing/scaling data only |
 
 None are committed (private, GB-scale).
 
@@ -103,7 +103,45 @@ Cosine similarity of per-Speaker average 256-dim embeddings, all 4 samples, 15 p
 
 Every between-Speaker pair across every sample sits below 0.30; every within-Speaker cohesion mean sits above 0.55. The top between-Speaker values cluster tightly: 0.298, 0.297, 0.253, 0.244, 0.235.
 
-**This gives #18 the number it was missing.** Its "conservative auto-hint threshold" was a pure guess; the between-Speaker ceiling is ≈ **0.30** with the within-Speaker floor at ≈ **0.55**. A hint threshold anywhere in **0.45–0.55** is clear of every different-humans pair measured, with margin on both sides.
+Restricted to the two **ground-truthed conversational** samples (the church service is excluded — singing is not conversational audio), the gap is even wider: between-Speaker **−0.021 … 0.289**, within-Speaker **0.811 … 0.864**.
+
+**This gives #18 the number it was missing.** Its "conservative auto-hint threshold" was a pure guess; the between-Speaker ceiling is ≈ **0.30** with the within-Speaker floor at ≈ **0.55** (≈0.81 on ground-truthed audio). A hint threshold anywhere in **0.45–0.55** is clear of every different-humans pair measured, with margin on both sides.
+
+**Caveat that matters:** this pins the *false-positive* side only. No sample produced a genuine over-split, so the similarity between two halves of one over-split human has **never been observed**; the assumption that it lands near the within-Speaker cohesion is still an assumption. The threshold is now safe against crying wolf — whether it is sensitive enough to catch a real over-split is unmeasured.
+
+### On ground-truthed conversational audio, it does not over-split at all
+
+| sample | true speakers | found | verdict |
+|---|---|---|---|
+| 34.5 min, 2-person interview | 2 | **2** | exact |
+| 49.75 min, 4-person conversation | 4 | **4** | exact |
+
+Talk time on the 4-person recording: 957 s, 933 s, 592 s, 21 s. The clusterer warm-started at **13** AHC clusters and landed on exactly 4.
+
+**#18's feared failure mode did not occur on any sample where the true speaker count is known** — including one at 50 minutes with 4 participants, which is the case #18 was written to worry about.
+
+### The tail of tiny Speakers is caused by junk audio, not over-splitting
+
+The untrimmed 83.3-min version of that same recording reports **6** Speakers, not 4. The extra two are entirely explained by dead air:
+
+| Speaker | total | before 49:45 | after 49:45 |
+|---|---|---|---|
+| S2 | 190 segs, 1220 s | 170 segs, 957 s | 20 segs, 263 s |
+| S3 | 231 segs, 933 s | 231 segs, 933 s | — |
+| S1 | 115 segs, 594 s | 114 segs, 592 s | 1 seg, 1 s |
+| **S5** | 5 segs, **172 s** | **none** | **5 segs, 172 s** |
+| **S6** | 9 segs, **23 s** | **none** | **9 segs, 23 s** |
+| S4 | 2 segs, 21 s | 2 segs, 21 s | — |
+
+**S5 and S6 exist only in the 33 minutes of dead air after the conversation ended.** Trim to the real content and the count is exactly 4. So the "tail of tiny Speakers" seen across the long samples is not the clusterer splitting a human — it is the clusterer doing its job on **room noise, background audio and silence**, which it has no way to reject.
+
+This also explains the embedding puzzle: the tails sit at ≤0.30 similarity to the real Speakers because **they genuinely are not those humans**. Nothing was mis-split, so there was nothing for similarity to detect.
+
+### Consequence: #18's mechanism is sound, but it is aimed at the wrong tail
+
+#18 offers **merge** as the repair for a spurious Speaker. Merge is the right repair for an over-split human — but the spurious Speakers actually observed are **not** fragments of a human, and merging one into a real Speaker would be wrong: it would attribute 172 s of room noise to a participant. The repair those need is *dismissal*, which #18 has no notion of.
+
+Filed as a follow-up rather than resolved here — see the ticket thread.
 
 ### The clusterer over-splits internally — and already repairs itself
 
@@ -118,40 +156,15 @@ The pipeline collapses far more warm-start clusters than #18 assumed:
 
 **#18's premise that "unbounded fixed-threshold AHC" is the over-split risk is wrong in an important way: AHC is only the warm start.** VBx prunes via its mixture weights (`computeCentroids` keeps only `pi > 1e-7`), then reconstruction's minimum-segment-duration drops the residue. On the 34.5-min sample the chain ran 6 → 3 → 2, and the pruned third cluster held 2 of 1221 chunks.
 
-### The real shape of over-splitting: a tail of tiny Speakers
+### Talk time separates real Speakers from spurious ones cleanly
 
-Talk time per final Speaker:
-
-| sample | substantial Speakers | tail |
+| sample | real participants | spurious |
 |---|---|---|
-| 34.5 min | 1063 s, 594 s | — none |
-| 58.6 min | 2530 s, 364 s | 1 s |
-| 83.3 min | 1220 s, 933 s, 594 s | 172 s, 23 s, 21 s |
-| 109.4 min | 4205 s, 1003 s | 174 s, 94 s |
+| 34.5 min (2 true) | 1063 s, 594 s | none |
+| 49.75 min (4 true) | 957 s, 933 s, 592 s, 21 s | none |
+| 83.3 min = the above + 33 min dead air | 957 s, 933 s, 592 s, 21 s | 172 s, 23 s (+263 s of dead air absorbed into a real Speaker) |
 
-The 34.5-min sample — the *only* one #18 had — is the only one with **no tail at all**. Every recording over ~58 min produced one to three Speakers with an order of magnitude less talk time than the real participants. Duration alone separates them cleanly.
-
-### ⚠️ The open fork this creates for #18
-
-The tail Speakers' embeddings are **not** similar to the dominant Speakers — every pair is ≤ 0.30, the same range as genuinely different humans. So either:
-
-- **(a) the tails are genuine brief participants** — a third person who spoke once, a voice through a laptop speaker, background audio. Then nothing over-split, and #18's mechanism is untested but its threshold is now grounded at ≈0.30/0.55.
-- **(b) the tails are fragments of a real Speaker** — then **#18's chosen mechanism does not work**, because embedding similarity cannot see them, and the cheap signal is talk-time (the third bullet of this measurement's brief), not embedding distance.
-
-A structural test — is the tail sandwiched inside one other Speaker's turns? — came out inconclusive:
-
-```
-embedded  S1: 115 segs, median 4.7s — sandwiched  4/115, median gap 1.15s
-embedded  S5:   5 segs, median 23.1s — sandwiched  3/5   (S2), median gap 12.44s
-embedded  S6:   9 segs, median 2.0s — sandwiched  5/9   (S2), median gap 0.61s
-aurora    S3:   1 seg,  median 1.3s — sandwiched  0/1
-trust     S1:  23 segs, median 3.8s — sandwiched  1/23,  median gap 2.60s
-trust     S4:  20 segs, median 3.4s — sandwiched  3/20,  median gap 0.93s
-```
-
-Only `embedded` S6 (5/9 inside S2, 0.61 s gaps, 2 s median duration) looks fragment-like. The rest are bounded by turn changes like ordinary participants.
-
-**Resolving (a) vs (b) requires ground truth on who is actually in these recordings — human input this measurement cannot supply.**
+Note the 4th real participant contributes only **21 s** — less than a spurious Speaker from dead air (172 s). **Talk time alone cannot separate them**, which kills the cheap-duration-signal idea floated in this measurement's third bullet. What separates them here is *where* they occur, and that is only knowable with the ground truth a user has and the app does not.
 
 ---
 

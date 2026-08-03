@@ -3,8 +3,11 @@
  *
  * A's experience, with four changes the review asked for:
  *  1. The player-bar waveform is replaced by C's Segment-block lanes.
- *  2. Long Segments break into display paragraphs at speech pauses — still ONE
- *     Segment, one coloured bubble, just breathing room (see data.ts paragraphs()).
+ *  2. NO automatic paragraph breaking. Pause-based splitting (data.ts
+ *     `paragraphs()`, kept for reference) reads as arbitrary, because silence is
+ *     not idea structure — and idea structure needs a model we have ruled out of
+ *     scope. Instead the bubble is `whitespace-pre-line`, so blank lines a human
+ *     types while editing survive: the only breaks we can honestly call meaningful.
  *  3. The selection checkbox is a real checkbox, and SHIFT-clicking one selects
  *     the whole range from the last one clicked.
  *  4. Because a range selection now exists, the action bar can act on it:
@@ -18,7 +21,7 @@ import {store, useStore} from '../store'
 import {transport, useFrame, useTransportState} from '../transport'
 import type {VariantProps} from '../types'
 import {SegmentScrubber} from '../Waveform'
-import {WordParagraphs} from '../Words'
+import {Words} from '../Words'
 
 export function VariantD({data, overlaps}: VariantProps) {
   const {selected} = useStore()
@@ -202,7 +205,7 @@ export function VariantD({data, overlaps}: VariantProps) {
                         onDragStart={e => e.dataTransfer.setData('text/segment', seg.id)}
                         data-seg={seg.id}
                         onDoubleClick={() => setEditing(seg.id)}
-                        className={`relative rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed ring-1 ring-white/5 data-[playing]:ring-white/25 ${
+                        className={`relative rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed whitespace-pre-line ring-1 ring-white/5 data-[playing]:ring-white/25 ${
                           isSelected ? 'outline outline-2 outline-cyan-400/70' : ''
                         }`}
                         style={{background: c.soft}}>
@@ -216,7 +219,7 @@ export function VariantD({data, overlaps}: VariantProps) {
                             }}
                           />
                         ) : (
-                          <WordParagraphs seg={seg} />
+                          <Words seg={seg} />
                         )}
 
                         {seg.edit && (

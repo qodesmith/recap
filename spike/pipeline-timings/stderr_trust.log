@@ -1,0 +1,17 @@
+[Profiling] Segmentation timings: windows=3282 prepareTotal=260.52ms (perWindow=0.0794ms) predictionTotal=18501.54ms (perWindow=5.6373ms)
+[Profiling] Embedding timings: fbankTotal=3749.00ms (perWindow=1.142ms), maskPrepTotal=8.17ms (perEval=0.001ms), resampleTotal=0.29ms (perValid=0.000ms), embeddingTotal=21102.05ms (perValid=6.475ms), pldaTotal=90.78ms (perValid=0.028ms), batches(fbank=103, plda=102)
+RECAP_TIMING ahc 3.035429000854492
+RECAP_TIMING ahc_input_embeddings 3259.0
+RECAP_TIMING ahc_clusters_out 30.0
+RECAP_TIMING vbx 0.008841991424560547
+RECAP_TIMING vbx_clusters_out 30.0
+RECAP_TIMING assign 0.0023649930953979492
+RECAP_TIMING reconstruction 0.37767505645751953
+RECAP_TIMING cluster_phase_total 3.4267159700393677
+RECAP_TIMING prepare_wall 25.598188996315002
+RECAP_TIMING prepare_segmentation 19.67580008506775
+RECAP_TIMING prepare_embedding_extraction 25.597847938537598
+RECAP_TIMING prepare_audio_loading 0.168876051902771
+real 29.90
+user 35.92
+sys 2.56

@@ -1,0 +1,32 @@
+[Profiling] Segmentation timings: windows=1036 prepareTotal=37.71ms (perWindow=0.0364ms) predictionTotal=6105.49ms (perWindow=5.8933ms)
+[Profiling] Embedding timings: fbankTotal=1222.22ms (perWindow=1.180ms), maskPrepTotal=2.85ms (perEval=0.001ms), resampleTotal=0.12ms (perValid=0.000ms), embeddingTotal=7820.88ms (perValid=6.405ms), pldaTotal=36.83ms (perValid=0.030ms), batches(fbank=33, plda=39)
+RECAP_TIMING ahc 0.4418560266494751
+RECAP_TIMING ahc_input_embeddings 1221.0
+RECAP_TIMING ahc_clusters_out 6.0
+RECAP_TIMING vbx 0.001132965087890625
+RECAP_TIMING vbx_clusters_out 6.0
+RECAP_TIMING assign 0.000841975212097168
+RECAP_TIMING reconstruction 0.12214994430541992
+RECAP_TIMING cluster_phase_total 0.5677940845489502
+RECAP_TIMING prepare_wall 9.487892031669617
+RECAP_TIMING prepare_segmentation 6.471392035484314
+RECAP_TIMING prepare_embedding_extraction 9.487650990486145
+RECAP_TIMING prepare_audio_loading 0.04764890670776367
+       10.47 real        11.16 user         0.98 sys
+           547094528  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              131065  page reclaims
+                1054  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  94  voluntary context switches
+               22861  involuntary context switches
+        139296656050  instructions retired
+         34450388459  cycles elapsed
+           756565000  peak memory footprint

@@ -1,0 +1,33 @@
+RECAP_TIMING seam_pass1_frame_gap_candidates 30.0
+RECAP_TIMING seam_pass1_probes_cumulative 15.0
+RECAP_TIMING seam_pass1_inserts 151.0
+RECAP_TIMING seam_pass2_frame_gap_candidates 24.0
+RECAP_TIMING seam_pass2_probes_cumulative 16.0
+RECAP_TIMING seam_pass2_inserts 5.0
+RECAP_TIMING seam_pass3_frame_gap_candidates 25.0
+RECAP_TIMING seam_pass3_probes_cumulative 17.0
+RECAP_TIMING seam_pass3_inserts 0.0
+RECAP_TIMING seam_passes_run 3.0
+RECAP_TIMING seam_frame_gap_candidates_total 79.0
+RECAP_TIMING seam_probes_total 17.0
+RECAP_TIMING seam_max_probes 32.0
+RECAP_TIMING asr_seam_repair 3.9779369831085205
+RECAP_TIMING asr_chunks 161.0
+       13.92 real        44.75 user         7.86 sys
+           289603584  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               87493  page reclaims
+                2940  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  26  voluntary context switches
+              336981  involuntary context switches
+        191879003747  instructions retired
+        150183468993  cycles elapsed
+            98009856  peak memory footprint

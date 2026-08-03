@@ -130,7 +130,10 @@ segments.sort((a, b) => a.start - b.start)
 
 // 4. One segment arrives pre-edited, so the "differs from model output" marker
 //    has something to render on load.
-const preEdited = segments.find(s => s.words.length > 25 && s.trackId === MIC)!
+// A short one, so the first long Segment is left free to show paragraph breaking.
+const preEdited = segments.find(
+  s => s.words.length > 25 && s.words.length < 45 && s.trackId === MIC
+)!
 preEdited.edit = {
   text: preEdited.words.map(w => w.w).join(' ').replace(/\bum\b ?/gi, ''),
   editedAt: '2026-07-29T14:02:11Z',

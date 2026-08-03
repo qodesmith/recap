@@ -68,6 +68,40 @@ export function hostFor(
   return null
 }
 
+/**
+ * Break a long Segment into display paragraphs. Purely presentational — the
+ * Segment is still one Segment, one Speaker, one coloured block.
+ *
+ * No guessing and no extra model: both signals already exist in the pipeline
+ * output. Parakeet punctuates (9.5% of words end a sentence), and the word
+ * timings give the gap between any two words. Measured on the real spike
+ * transcript, `gap >= 0.6s` (with a sentence-end fallback so a 60-word run
+ * without a breath still breaks) yields a median 25-word paragraph, and splits
+ * the worst 187-word segment into 65/26/54/16/26.
+ */
+export function paragraphs(
+  s: Segment,
+  {gap = 0.6, minWords = 60, floor = 8}: {gap?: number; minWords?: number; floor?: number} = {}
+): Array<{offset: number; words: Segment['words']}> {
+  const out: Array<{offset: number; words: Segment['words']}> = []
+  let cur: Segment['words'] = []
+  let offset = 0
+  for (let i = 0; i < s.words.length; i++) {
+    cur.push(s.words[i])
+    const next = s.words[i + 1]
+    if (!next) break
+    const isSentenceEnd = /[.?!]$/.test(s.words[i].w)
+    const breakHere = next.s - s.words[i].e >= gap || (isSentenceEnd && cur.length >= minWords)
+    if (breakHere && cur.length >= floor) {
+      out.push({offset, words: cur})
+      offset += cur.length
+      cur = []
+    }
+  }
+  if (cur.length) out.push({offset, words: cur})
+  return out
+}
+
 export function segmentText(s: Segment): string {
   return s.edit ? s.edit.text : s.words.map(w => w.w).join(' ')
 }

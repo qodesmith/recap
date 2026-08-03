@@ -5,9 +5,11 @@ import {transport} from './transport'
 import {VariantA} from './variants/VariantA'
 import {VariantB} from './variants/VariantB'
 import {VariantC} from './variants/VariantC'
+import {VariantD} from './variants/VariantD'
 import {fmt} from './data'
 
 const VARIANTS = [
+  {key: 'D', name: 'Conversation + lanes', render: VariantD},
   {key: 'A', name: 'Conversation', render: VariantA},
   {key: 'B', name: 'Script', render: VariantB},
   {key: 'C', name: 'Studio', render: VariantC},
@@ -21,7 +23,7 @@ const VARIANTS = [
 export function Shell() {
   const {data, overlaps, dataset} = useStore()
   const [variant, setVariant] = useState(
-    () => new URLSearchParams(location.search).get('variant')?.toUpperCase() ?? 'A'
+    () => new URLSearchParams(location.search).get('variant')?.toUpperCase() ?? 'D'
   )
 
   const change = (key: string) => {

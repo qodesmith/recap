@@ -91,6 +91,78 @@ export function Waveform({
 }
 
 /**
+ * The player-bar scrubber built out of Segment blocks instead of a waveform —
+ * C's lanes shrunk to fit where A's waveform was. Scrub anywhere, including over
+ * a block; blocks are a picture of who spoke when, not a click target.
+ */
+export function SegmentScrubber({
+  tracks,
+  segments,
+  duration,
+  colorOf,
+  laneHeight = 15,
+  className = '',
+}: {
+  tracks: Track[]
+  segments: Segment[]
+  duration: number
+  colorOf: (speakerId: string) => {dot: string}
+  laneHeight?: number
+  className?: string
+}) {
+  const wrap = useRef<HTMLDivElement>(null)
+  useFrame(t => wrap.current?.style.setProperty('--t-pct', String(t / (duration || 1))))
+
+  const seekAt = (clientX: number) => {
+    const r = wrap.current!.getBoundingClientRect()
+    transport.seek(((clientX - r.left) / r.width) * duration)
+  }
+
+  return (
+    <div
+      ref={wrap}
+      onMouseDown={e => {
+        seekAt(e.clientX)
+        const move = (ev: MouseEvent) => seekAt(ev.clientX)
+        const up = () => {
+          window.removeEventListener('mousemove', move)
+          window.removeEventListener('mouseup', up)
+        }
+        window.addEventListener('mousemove', move)
+        window.addEventListener('mouseup', up)
+      }}
+      className={`relative cursor-pointer select-none ${className}`}>
+      {tracks.map(track => (
+        <div
+          key={track.id}
+          title={track.label}
+          className="relative mb-0.5 rounded-sm bg-ink-3/80 last:mb-0"
+          style={{height: laneHeight}}>
+          {segments
+            .filter(s => s.trackId === track.id)
+            .map(s => (
+              <div
+                key={s.id}
+                data-seg={s.id}
+                className="absolute top-0 h-full rounded-[2px] opacity-70 data-[playing]:opacity-100 data-[playing]:brightness-125"
+                style={{
+                  left: `${(s.start / duration) * 100}%`,
+                  width: `${Math.max(0.1, ((s.end - s.start) / duration) * 100)}%`,
+                  background: colorOf(s.speakerId).dot,
+                }}
+              />
+            ))}
+        </div>
+      ))}
+      <div
+        className="pointer-events-none absolute inset-y-0 w-px bg-white"
+        style={{left: 'calc(var(--t-pct, 0) * 100%)'}}
+      />
+    </div>
+  )
+}
+
+/**
  * One lane per Track, each Segment a block coloured by Speaker. Overlap is
  * simply two blocks in the same column on different lanes — the merge decision
  * (#11) made visible rather than annotated.

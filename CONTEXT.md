@@ -34,7 +34,10 @@ A contiguous span of speech by exactly one Speaker on exactly one Track. Never s
 Text plus a start and end time, owned by a Segment in order. Has no identity outside its Segment; nothing references a Word directly. Carries the model's confidence score, which is recorded but not surfaced.
 
 **Speaker**:
-A participant in a Recording, with a stable identity and a name that defaults to `Speaker 1`, `Speaker 2`. Segments reference a Speaker; renaming changes that Speaker's name and nothing else. Scoped to one Recording — the same person across two Recordings is two Speakers.
+A participant in a Recording, with a stable identity and a name that defaults to `Speaker 1`, `Speaker 2`. Segments reference a Speaker; renaming changes that Speaker's name and nothing else. Scoped to one Recording — the same person across two Recordings is two Speakers. A Speaker is made of words: a diarization label that catches no Words never becomes a Speaker, because a participant who said nothing is not a participant.
+
+**Dismissal**:
+A user's assertion that a Speaker is not a person — room noise, music or dead air that diarization clustered into an identity of its own. The Speaker and its Segments are hidden from the transcript and from exports, never deleted, so a dismissal is always reversible. Distinct from a merge: merge folds a Speaker into a real one, dismissal says there was no one there.
 
 **Provenance**:
 The record of which Track and which diarization label produced a Speaker. Because diarization runs per Track, one human captured on two Tracks arrives as two Speakers, each with its own provenance.

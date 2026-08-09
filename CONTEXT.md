@@ -22,6 +22,13 @@ Where a Track's audio came from — the mic, a system-audio source, or an import
 **Attributed Track**:
 A Track whose Speaker the user has asserted up front, typically their own mic. Diarization is skipped and every Segment is stamped with that Speaker. Attribution is a revisable default, not a permanent fact — clearing it sends the Track through diarization like any other.
 
+**Trim**:
+A Recording-level window over its audio, set before transcription and applied to every Track on the shared timeline. Non-destructive — the audio on disk stays whole and the window is two numbers — so the Trim is what the pipeline sees, not what the Recording is. To the user the window _is_ the Recording: playback stays inside it and its start is time zero. Once transcribed, the Trim is fixed; changing it means a Re-transcribe.
+_Avoid_: Crop, cut, clip
+
+**Mixdown**:
+The single playable file derived from a Recording's Tracks, produced before transcription. What the player plays at every stage. Tracks stay separate for Processing; the Mixdown exists only for listening.
+
 ### Transcript structure
 
 **Transcript**:
@@ -65,8 +72,11 @@ The stage turning a Track's audio into speaker turns. Skipped on an Attributed T
 **Segmentation**:
 The stage combining Words and speaker turns into Segments, cutting at turn boundaries so no Segment spans a speaker change.
 
+**Re-transcribe**:
+Returning a transcribed Recording to `unprocessed` so its Trim can be changed and Processing run again. Discards every piece of transcript work — Segments, edits, Speaker names, merges, dismissals — because a re-run renumbers Speakers. Touches no audio. Distinct from retrying a failed Track, which re-runs one Track and preserves everything else.
+
 **Track state**:
 `pending` → `transcribing` → `diarizing` → `transcribed`, or `failed`. Segmentation has no state of its own.
 
 **Recording state**:
-Derived from its Tracks: `capturing`, `unprocessed`, `processing`, `transcribed`, or `needs attention`. A partially-transcribed Recording is a valid, displayable state — the Segments that exist are shown while the rest is still coming.
+`capturing` → `preparing` → `unprocessed` → `processing` → `transcribed`, or `needs attention`; from `unprocessed` onwards it is derived from the Tracks. `preparing` covers decoding, the Mixdown and the waveform data the Trim is drawn against — an import starts there, a capture passes through it — and a Recording cannot be transcribed until it is done. A partially-transcribed Recording is a valid, displayable state — the Segments that exist are shown while the rest is still coming.

@@ -17,10 +17,14 @@ One captured source within a Recording, or the single track of an imported file.
 _Avoid_: Channel, stream, input
 
 **Source**:
-Where a Track's audio came from — the mic, a system-audio source, or an imported file. A property of the Track; a Recording is neutral about how it came to exist.
+Where a Track's audio came from — the mic, system audio, or an imported file. A property of the Track; a Recording is neutral about how it came to exist. Track labels are derived from the Source, never typed by the user.
+
+**Capture**:
+Recording live audio into a new Recording. The user chooses Sources — the mic, system audio, or both — and each becomes its own Track, metered live so a source that is producing nothing is visible before and during the Capture. A Capture never stops on its own: if a device disappears it falls back to whichever input the system is using rather than ending. Sources are fixed once it starts, and there is no pause.
+_Avoid_: Session, take
 
 **Attributed Track**:
-A Track whose Speaker the user has asserted up front, typically their own mic. Diarization is skipped and every Segment is stamped with that Speaker. Attribution is a revisable default, not a permanent fact — clearing it sends the Track through diarization like any other.
+A Track whose Speaker is asserted rather than discovered. Diarization is skipped and every Segment is stamped with that Speaker. A mic Track is attributed automatically, because one mic is one person — so the app records people around a table as a single Speaker, by design. Attribution is a revisable default, not a permanent fact — clearing it sends the Track through diarization like any other, which means a Re-transcribe once the Recording has been processed.
 
 **Trim**:
 A Recording-level window over its audio, set before transcription and applied to every Track on the shared timeline. Non-destructive — the audio on disk stays whole and the window is two numbers — so the Trim is what the pipeline sees, not what the Recording is. To the user the window _is_ the Recording: playback stays inside it and its start is time zero. Once transcribed, the Trim is fixed; changing it means a Re-transcribe.

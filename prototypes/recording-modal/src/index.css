@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0b0d10;
+  --color-ink-2: #14181d;
+  --color-ink-3: #1c2229;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: var(--color-ink);
+  color: #e6e9ee;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, 'SF Pro Text', Inter, sans-serif;
+}
+
+/* the backdrop-click refusal — "the modal is record mode", felt */
+@keyframes proto-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-5px);
+  }
+  30% {
+    transform: translateX(5px);
+  }
+  45% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  80% {
+    transform: translateX(-1px);
+  }
+}
+.proto-shake {
+  animation: proto-shake 0.32s ease-in-out;
+}
+
+@keyframes proto-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.proto-slide-up {
+  animation: proto-slide-up 0.16s ease-out;
+}
+
+@keyframes proto-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+.proto-indeterminate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 33%;
+  background: currentColor;
+  opacity: 0.55;
+  animation: proto-sweep 1.15s ease-in-out infinite;
+}

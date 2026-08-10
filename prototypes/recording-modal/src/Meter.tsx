@@ -66,10 +66,10 @@ function paint(
   /* --------- geometry: where history ends and "now" begins --------- */
   const gap = 6 * dpr
   const nowW = style === 'unified' ? Math.max(10 * dpr, cw * 0.06) : 0
-  const barH = style === 'split' ? Math.max(8 * dpr, ch * 0.28) : 0
+  const barH = style === 'split' ? Math.max(8 * dpr, ch * 0.24) : 0
   const histX = 0
-  const histY = style === 'split' ? barH + gap : 0
-  const histH = ch - histY
+  const histY = 0
+  const histH = style === 'split' ? ch - barH - gap : ch
   const histW = style === 'unified' ? cw - nowW - gap : cw
 
   /* --------- the room-tone band, drawn across everything ---------- */
@@ -118,16 +118,29 @@ function paint(
     ctx.fillStyle = 'rgba(255,255,255,0.8)'
     ctx.fillRect(x, histY + histH - peak * histH - dpr, nowW, 1.5 * dpr)
   } else {
-    // #24's literal reading: a separate horizontal bar with its own scale
+    // A separate HORIZONTAL bar, sitting UNDER its own history. Two readings,
+    // two axes, stacked — the history answers "what has been arriving", the bar
+    // answers "what is arriving now".
+    const y = ch - barH
     ctx.fillStyle = 'rgba(0,0,0,0.45)'
-    ctx.fillRect(0, 0, cw, barH)
+    ctx.fillRect(0, y, cw, barH)
+
+    // the room-tone band, on the bar's own left-to-right scale
+    const roomX = ((ROOM_TOP_DB - METER_FLOOR_DB) / -METER_FLOOR_DB) * cw
     const gateX = ((SIGNAL_GATE_DB - METER_FLOOR_DB) / -METER_FLOOR_DB) * cw
-    ctx.fillStyle = 'rgba(255,255,255,0.06)'
-    ctx.fillRect(0, 0, gateX, barH)
+    ctx.fillStyle = 'rgba(255,255,255,0.07)'
+    ctx.fillRect(gateX, y, roomX - gateX, barH)
+    // below the gate is not quiet, it is nothing (#9's silently-denied tap)
+    ctx.fillStyle = 'rgba(0,0,0,0.4)'
+    ctx.fillRect(0, y, gateX, barH)
+
     ctx.fillStyle = `rgba(${rgb},1)`
-    ctx.fillRect(0, 0, level * cw, barH)
+    ctx.fillRect(0, y, level * cw, barH)
     ctx.fillStyle = 'rgba(255,255,255,0.8)'
-    ctx.fillRect(peak * cw, 0, 1.5 * dpr, barH)
+    ctx.fillRect(peak * cw, y, 1.5 * dpr, barH)
+    // the gate tick, so "nothing" has a visible edge on the bar too
+    ctx.fillStyle = 'rgba(255,255,255,0.3)'
+    ctx.fillRect(gateX, y, dpr, barH)
   }
 }
 
@@ -148,10 +161,11 @@ export function Meter({
 
   // The axis has to line up with the pixels the canvas actually draws, or the
   // "room tone" label is decoration. Same geometry as paint(), in CSS px.
-  const barH = style === 'split' ? Math.max(8, height * 0.28) : 0
-  const histTop = style === 'split' ? barH + 6 : 0
-  const histH = height - histTop
-  const at = (db: number) => histTop + (1 - (db + 60) / 60) * histH
+  // It labels the HISTORY only — in split mode the bar below has its own
+  // left-to-right scale and shares no axis with it.
+  const barH = style === 'split' ? Math.max(8, height * 0.24) : 0
+  const histH = style === 'split' ? height - barH - 6 : height
+  const at = (db: number) => (1 - (db + 60) / 60) * histH
 
   return (
     <div className="flex gap-1.5">

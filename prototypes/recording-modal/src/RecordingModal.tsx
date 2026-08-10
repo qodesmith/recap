@@ -140,7 +140,7 @@ function SourceRow({
 
       {on && (
         <div className="mt-2.5">
-          <Meter source={source} height={live ? 56 : 44} style={meterStyle} />
+          <Meter source={source} height={live ? 68 : 54} style={meterStyle} />
         </div>
       )}
     </div>

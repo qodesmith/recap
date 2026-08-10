@@ -20,17 +20,15 @@ toggle, the `capturing`-row toggle, and a live state readout.
 switcher swaps **only the confirmation**, which is the single sub-question the
 ticket says is genuinely open:
 
-| | |
-|---|---|
-| **A** | Confirm **in place** — the footer stops being a Stop button and becomes the question |
-| **B** | Confirm **stacked** — a second modal over the first |
-| **C** | Confirm **as a sheet** — slides up over the footer, meters stay visible |
+| | | |
+|---|---|---|
+| **A** | Confirm **in place** — the footer stops being a Stop button and becomes the question | ✅ **chosen** |
+| **B** | Confirm **stacked** — a second modal over the first | rejected |
+| **C** | Confirm **as a sheet** — slides up over the footer | rejected |
 
 Everything else — layout, meters, timer, notice, transcription strip — is
-identical across all three on purpose, so the comparison is about shape.
-
-There is one extra knob that is **not** a variant: **meter shape**
-(unified/split). See below.
+identical across all three on purpose, so the comparison is about shape. B and C
+are kept in the branch as the primary source for the decision.
 
 ## What to try
 
@@ -73,24 +71,23 @@ number on the surface that is **not about a source**, and the header is the only
 region that is not about a source either — so they belong together, above the
 rows rather than among them.
 
-### The meter: two readings, one dB axis (`unified`, the proposal)
+### The meter: two stacked readings (`split` — the chosen shape)
 
 #24 ordered both of A's instantaneous dBFS bar and B's rolling ~12 s history.
-Taken literally that is four moving things for two sources.
+Each source shows the **history on top** and a **horizontal dB bar directly
+underneath it**. Two readings, two axes, stacked: the history answers *what has
+been arriving*, the bar answers *what is arriving now*.
 
-The proposal collapses them into **one widget with one vertical dB axis**: the
-history is the left ~94 %, time running left→right, and the instantaneous bar is
-a column at the right-hand end of the *same* axis — "now", continuing the line.
-The room-tone band is a horizontal band across both, so it is marked once and
-means the same thing in both readings. Two widgets, not four.
+A `unified` alternative was built and **rejected**: it folded both onto one
+vertical dB axis (history left, "now" as a column continuing the same axis at
+the right-hand end) to reduce four moving things to two. It's still behind the
+knob as the primary source for that call.
 
-The `split` knob draws #24's two meters as literally described. **Flip between
-them** — if unified isn't better, it should lose here.
-
-Either way the axis is labelled (`0` / `-24` / `room` / `-60`) and the region
-below the signal gate is drawn as a *darker* zone, because #9's finding is that
-a silently-denied tap is not quiet — it is **nothing**, and a linear meter puts
-"quiet room" and "denied" in the same place.
+Both shapes draw the room-tone band, and both draw the region below the signal
+gate as a *darker* zone — #9's finding is that a silently-denied tap is not
+quiet, it is **nothing**, and a meter without that distinction puts "quiet room"
+and "denied" in the same place. The history carries a labelled axis
+(`0` / `-24` / `room` / `-60`).
 
 ### The device-fallback notice sits under the header, not at the bottom
 
@@ -115,8 +112,10 @@ Three outcomes, one destructive:
 that has to be confirmed is an admission the first one didn't say enough. The
 cost is in the label instead of in a second dialog.
 
-Discard returns you to **setup** with the modal still open, and the row it
-created at Start disappears from the library.
+**Discard closes the modal**, silently, and the row it created at Start
+disappears from the library. Landing back on setup would have implied "now start
+over" — a suggestion the app has no business making about a recording you just
+threw away. Stop hands off to #22's page; Discard hands off to nothing.
 
 ### #13's transcription keeps running, and says so
 
@@ -145,15 +144,15 @@ in the knobs and judge whether it earns its place at all.
 looking at the sidebar while a capture runs, so it would be unreachable UI. That
 retires #23's "the Activity row names the source and says what happened".
 
-## Open — react to these
+## Settled
 
-1. **Unified vs split meter.** The one place the design overrides #24's literal
-   instruction.
-2. **Which confirmation.** A / B / C.
-3. **Does Discard need more friction, or less?** It is currently one click from
-   the confirmation, with the cost in the label.
-4. **Should Discard acknowledge itself?** Right now it is silent — you just land
-   back on setup. Nothing says "0:20 discarded".
-5. **Is the `capturing` row behind the modal worth rendering?**
-6. **Is the backdrop shake right, or should a backdrop click open the
-   confirmation like Esc does?**
+1. **Meter** — split, history above a horizontal dB bar. Unified rejected.
+2. **Confirmation** — A, in place. No new layer.
+3. **Discard** — one confirm, cost in the label, no acknowledgement, closes the
+   modal.
+
+## Still open
+
+4. **Is the `capturing` row behind the modal worth rendering?** Toggle it in the
+   prototype panel.
+5. **Backdrop click** — refuse with a shake, or open the confirmation like Esc?

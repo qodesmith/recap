@@ -76,7 +76,7 @@ export function Shell() {
   const worldRef = useRef<World>(createWorld())
   const [, force] = useState(0)
   const [open, setOpen] = useState(true)
-  const [meterStyle, setMeterStyle] = useState<'unified' | 'split'>('unified')
+  const [meterStyle, setMeterStyle] = useState<'unified' | 'split'>('split')
 
   /** One rAF loop. Meters + clock ride publishFrame straight to the DOM (#5). */
   useEffect(() => {
@@ -112,7 +112,14 @@ export function Shell() {
       stop(w)
       setOpen(false)
     },
-    discard: () => discard(w),
+    // Discard closes the modal, silently. Landing back on setup would have
+    // implied "now start over", which is a suggestion the app has no business
+    // making about a recording the user just threw away — you asked to be rid
+    // of it, so you get the library back.
+    discard: () => {
+      discard(w)
+      setOpen(false)
+    },
     reset: () => {
       reset(w)
       setOpen(false)

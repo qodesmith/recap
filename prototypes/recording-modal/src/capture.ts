@@ -299,8 +299,8 @@ export function stop(w: World) {
  * #23 deletes zero-frame bundles silently and #12 owns Trash-and-confirm for a
  * Recording that reached the library. This is neither: a capture that exists
  * (bundle written from Start) but that the user never wants to see again. It
- * removes the row, throws the audio away, and lands back on setup so you can
- * start over — which is the whole reason it isn't just Stop.
+ * removes the row and throws the audio away. The modal closes with it — Stop
+ * hands off to #22's page, Discard hands off to nothing.
  */
 export function discard(w: World) {
   if (w.phase !== 'capturing') return

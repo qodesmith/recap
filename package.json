@@ -1,5 +1,8 @@
 {
 	"name": "recap",
+	"scripts": {
+		"update-matt-pocock-skills": "bun run --bun updateMattPocockSkills.ts"
+	},
 	"devDependencies": {
 		"@types/bun": "^1.3.14"
 	},

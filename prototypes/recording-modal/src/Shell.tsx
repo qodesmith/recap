@@ -321,18 +321,6 @@ function ControlPanel({
         <span className="font-semibold">A transcription is running (#13)</span>
       </label>
 
-      <label className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          checked={world.showCapturingRow}
-          onChange={e => {
-            world.showCapturingRow = e.target.checked
-            onChange()
-          }}
-        />
-        <span className="font-semibold">Show the `capturing` row behind</span>
-      </label>
-
       <div className="flex gap-1">
         <button
           onClick={reopen}

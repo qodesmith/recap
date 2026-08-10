@@ -17,9 +17,13 @@ export function Library({
   onOpen: () => void
   inert: boolean
 }) {
-  const rows = w.recordings.filter(
-    r => r.state !== 'capturing' || w.showCapturingRow
-  )
+  /*
+   * NO `capturing` row. The bundle exists from Start (#23), but the library is
+   * behind a modal for the whole capture, so a row there is drawn where nobody
+   * is looking. The list's job is to be correct the moment the modal goes away
+   * — the Recording shows up when it lands, as `preparing`.
+   */
+  const rows = w.recordings.filter(r => r.state !== 'capturing')
 
   return (
     <div className="flex h-full">
@@ -82,22 +86,9 @@ export function Library({
                   {r.when} · {r.tracks.join(', ')}
                 </div>
               </div>
-              {r.state === 'capturing' ? (
-                /*
-                 * Deliberately NOT live: no ticking clock, no pulsing dot. The
-                 * modal in front already owns "how long have I been recording",
-                 * and a second clock behind frosted glass is a duplicate the
-                 * user can't read anyway. The row's job is that the Recording
-                 * *exists* from Start (#23's bundle-at-Start), not live status.
-                 */
-                <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[11px] text-red-300">
-                  Recording
-                </span>
-              ) : (
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] text-white/60">
-                  {r.state}
-                </span>
-              )}
+              <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] text-white/60">
+                {r.state}
+              </span>
             </button>
           ))}
         </div>

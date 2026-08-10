@@ -79,8 +79,6 @@ export type World = {
   /* ---- prototype knobs ---- */
   speed: number
   signal: Record<SourceId, SignalMode>
-  /** #24's unanswered question: is a `capturing` row behind the modal worth it? */
-  showCapturingRow: boolean
 
   /* ---- backdrop so the surface butts against a populated app ---- */
   recordings: Recording[]
@@ -165,7 +163,6 @@ export function createWorld(): World {
 
     speed: 1,
     signal: {mic: 'talking', system: 'talking'},
-    showCapturingRow: true,
 
     recordings: [
       {

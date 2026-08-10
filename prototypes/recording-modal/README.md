@@ -47,9 +47,10 @@ are kept in the branch as the primary source for the decision.
 
 Start leaves the modal exactly where it is. Clicking the backdrop does **not**
 open the confirmation — a backdrop click is the most accidental gesture there
-is — it **refuses visibly**: the modal shakes and the subtitle changes to
-"Recap is recording — stop before you do anything else." A modal that silently
-eats clicks reads as broken; one that answers reads as deliberate.
+is — it **refuses visibly**: the modal shakes, and that is the entire response.
+Nothing else on the surface changes, because a click out there was never a
+request for anything. A modal that silently eats clicks reads as broken; one
+that shrugs reads as deliberate.
 
 ### What Start changes: the controls go, the readings stay
 
@@ -133,16 +134,16 @@ a **relaunch** — which destroys a modal. So the affordance that causes one
 losing the modal costs nothing, and never during a capture. Mid-capture a dead
 source is reported, but nothing offers to restart the app.
 
-### The backdrop renders the `capturing` row, but not live
+### The backdrop shows no `capturing` row at all
 
-The Recording exists from Start (#23's bundle-at-Start), so the row exists. It
-carries a static "Recording" chip — **no ticking clock, no pulsing dot**. A
-second clock behind frosted glass is a duplicate you can't read. Toggle it off
-in the knobs and judge whether it earns its place at all.
+The bundle exists from Start (#23), but the library is behind a modal for the
+whole capture, so a row there is drawn where nobody is looking. The list's job
+is to be **correct the moment the modal goes away** — the Recording appears when
+it lands, as `preparing`.
 
-**There is no capture row in the Activity sidebar, ever** — you can never be
-looking at the sidebar while a capture runs, so it would be unreachable UI. That
-retires #23's "the Activity row names the source and says what happened".
+**There is no capture row in the Activity sidebar either, ever** — you can never
+be looking at the sidebar while a capture runs, so it would be unreachable UI.
+That retires #23's "the Activity row names the source and says what happened".
 
 ## Settled
 
@@ -150,9 +151,5 @@ retires #23's "the Activity row names the source and says what happened".
 2. **Confirmation** — A, in place. No new layer.
 3. **Discard** — one confirm, cost in the label, no acknowledgement, closes the
    modal.
-
-## Still open
-
-4. **Is the `capturing` row behind the modal worth rendering?** Toggle it in the
-   prototype panel.
-5. **Backdrop click** — refuse with a shake, or open the confirmation like Esc?
+4. **No `capturing` row** behind the modal, or anywhere else.
+5. **Backdrop click** — shake, and nothing else.

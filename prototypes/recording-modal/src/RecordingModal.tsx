@@ -240,9 +240,9 @@ export function RecordingModal({
 
   /*
    * Backdrop click is the MOST accidental gesture there is, so it does not open
-   * the confirmation — it refuses, visibly. The shake plus the line under the
-   * title is the whole "the modal is record mode" claim in one interaction: the
-   * app is not being coy about why nothing happened.
+   * the confirmation — it refuses, visibly, and that is ALL it does. The shake
+   * is the whole message: nothing else on the surface changes, because a click
+   * out here was never a request for anything.
    */
   const onBackdrop = () => {
     if (w.phase !== 'capturing') return onClose()
@@ -273,9 +273,7 @@ export function RecordingModal({
                     Recording
                   </div>
                   <p className="mt-0.5 text-[11px] text-white/35">
-                    {nudge
-                      ? 'Recap is recording — stop before you do anything else.'
-                      : 'Sources are fixed for this recording.'}
+                    Sources are fixed for this recording.
                   </p>
                 </>
               ) : (

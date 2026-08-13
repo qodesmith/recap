@@ -9,11 +9,12 @@ struct TapProbeResult: Codable {
     var callbacks: Int
     var frames: Int
     var peak: Float
+    var protectedCallbacks: Int
     var verdict: String
 }
 
 extension SystemAudioTap {
-    var peakSample: Float { diag.peakPerBuffer.max() ?? 0 }
+    var peakSample: Float { diag.snapshot().peak }
 }
 
 enum TapProbe {
@@ -27,14 +28,14 @@ enum TapProbe {
             tap = try SystemAudioTap()
         } catch {
             return TapProbeResult(ok: false, error: "\(error)", callbacks: 0, frames: 0, peak: 0,
-                                  verdict: "ERROR — tap creation failed: \(error)")
+                                  protectedCallbacks: 0, verdict: "ERROR — tap creation failed: \(error)")
         }
         do {
             try tap.start()
         } catch {
             tap.stop()
             return TapProbeResult(ok: false, error: "\(error)", callbacks: 0, frames: 0, peak: 0,
-                                  verdict: "ERROR — tap start failed: \(error)")
+                                  protectedCallbacks: 0, verdict: "ERROR — tap start failed: \(error)")
         }
         for s in 1...seconds {
             Thread.sleep(forTimeInterval: 1)
@@ -44,16 +45,22 @@ enum TapProbe {
 
         let callbacks = tap.writer.callbackCount
         let frames = tap.writer.frameCount
-        let peak = tap.peakSample
+        let snap = tap.diag.snapshot()
+        let peak = snap.peak
         let verdict: String
-        if callbacks == 0 {
+        if callbacks == 0 && snap.protectedCallbacks > 0 {
+            verdict = "PROTECTED — \(snap.protectedCallbacks) callbacks delivered unreadable buffers and none were readable. This is the pending-prompt state; answer the prompt and probe again."
+        } else if callbacks == 0 {
             verdict = "NO CALLBACKS — the aggregate device delivered nothing at all"
         } else if peak < signalFloor {
             verdict = "SILENCE — tap ran (\(callbacks) callbacks, \(frames) frames) but delivered only zeros. Either the tap is denied, or nothing was playing."
         } else {
             verdict = String(format: "SIGNAL — peak %.4f over %d frames", peak, frames)
         }
-        return TapProbeResult(ok: true, error: nil, callbacks: callbacks, frames: frames, peak: peak, verdict: verdict)
+        let suffix = snap.protectedCallbacks > 0 && callbacks > 0
+            ? " (+\(snap.protectedCallbacks) unreadable callbacks while the prompt was pending)" : ""
+        return TapProbeResult(ok: true, error: nil, callbacks: callbacks, frames: frames, peak: peak,
+                              protectedCallbacks: snap.protectedCallbacks, verdict: verdict + suffix)
     }
 
     static func runChildAndPrint(seconds: Int) {

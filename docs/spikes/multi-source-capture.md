@@ -4,6 +4,8 @@
 
 Verdict: **PROVEN** on real hardware (macOS 26.5.2, Apple Silicon). Mic + system audio captured **simultaneously as separate, time-aligned tracks** with first-party APIs, exactly as #3 predicted. The one surprise is a **permission trap**: a denied audio-capture tap returns *silence, not an error*, and the prompt did not auto-fire in a CLI/terminal context.
 
+> **Correction (2026-08, via [#26](https://github.com/qodesmith/recap/issues/26)):** the silence-on-denial finding is confirmed and unchanged, but **"the prompt did not auto-fire" is an artifact of launching from a terminal**, not shipped behaviour — see [§4](#4-permissions--tested-with-the-spikes-headline-surprise). One of the two design consequences drawn from it holds for a stronger reason; the other is contested and is being measured by [#27](https://github.com/qodesmith/recap/issues/27).
+
 ## What was built
 
 A small Swift program (Core Audio process tap for system audio, `AVAudioEngine` for the mic — the #3-recommended split). Two modes: `enumerate` (source list + picker metadata) and `capture [secs]` (both sources → two WAV files + a drift report). Chosen over the #3-recommended Rust `objc2` path only because no Rust toolchain was installed and the deliverable is the *finding*; the OS-level result is identical.
@@ -31,6 +33,15 @@ Measured with per-buffer host timestamps (`mach_absolute_time` — the **same cl
 - **Two design consequences:**
   1. **Denial must be detected heuristically** (capture runs but is pure silence) — there is no status to query. First-run onboarding must be a *test capture that checks for signal*, not a permission checklist (reinforces #3 and the map's onboarding fog).
   2. Granting the permission **requires an app restart** to take effect — onboarding has to account for a relaunch.
+
+#### Correction (2026-08, via [#26](https://github.com/qodesmith/recap/issues/26))
+
+The measurements above are accurate and this section already flagged that a CLI is "a poor proxy for the shipped `.app`". What needs correcting is that the two consequences were drawn as if it weren't — and under scrutiny they come apart.
+
+- **The prompt: an artifact, not the API.** TCC attributes a request to the **responsible process**; a binary spawned from Warp is attributed to Warp, while a double-clicked `.app` bundle is its own responsible process. A shipped Recap should therefore prompt against its own bundle with its own `NSAudioCaptureUsageDescription` string and appear in the Privacy pane by name. Untested either way — that is [#27](https://github.com/qodesmith/recap/issues/27). (Tahoe wrinkle: on macOS 26.1 plain non-bundled executables are prompted and tracked by TCC but **do not appear in System Settings** at all; `.app` bundles are unaffected.)
+- **Consequence 1 stands, for a better reason.** It is *not* contingent on #27 and survives even if the prompt fires perfectly: there is **no preflight or status API for the tap at all** (confirmed by an Apple engineer — the system prompts on first capture from an aggregate containing a tap, and nothing public queries or requests it in advance). `CGPreflightScreenCaptureAccess` is the wrong lever — it reads `kTCCServiceScreenCapture`, whereas the tap is governed by the audio-only sub-grant `kTCCServiceAudioCapture`. Silence-on-denial is independently corroborated on Apple's forums, so the test-capture-that-checks-for-signal conclusion is unaffected.
+- **Consequence 2 is contested.** The restart that worked here was **the terminal's**, not Recap's. Apple documents a restart for *Screen* Recording; there is nothing published for process taps either way. It may hold for bundles too, but this spike cannot be the evidence, since the process that had to restart was not the one under test. Measured by [#27](https://github.com/qodesmith/recap/issues/27) — it decides whether onboarding has a "Restart Recap" step at all.
+- **Not covered here, and it matters more than the prompt:** **TCC keys grants to the code signature**, so an ad-hoc rebuild reads as a different app and every user re-grants system audio on **every update**. See #26 and #27.
 
 ### 5. Format — ✅
 - Both sources: **48 kHz, Float32**; system tap **stereo**, mic **mono**. Tap format is **read-only** (`kAudioTapPropertyFormat`).

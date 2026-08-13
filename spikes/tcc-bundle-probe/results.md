@@ -26,3 +26,31 @@ Build 2 (ad-hoc, rebuilt — note the changed CDHash):
 - M4a · ad-hoc rebuild, same grant: App errors out and closed
 - M4a · Privacy pane after ad-hoc rebuild: app errors out and closed
 - Self-signed arm: SKIPPED by choice
+
+# TCC probe run — Thu Aug 13 09:43:11 EDT 2026
+
+    ProductName:		macOS
+    ProductVersion:		26.5.2
+    BuildVersion:		25F84
+
+## Phase A — ad-hoc signature
+
+Build 1 (ad-hoc):
+    Identifier=com.qodesmith.recap.tcc-probe
+    Signature=adhoc
+    TeamIdentifier=not set
+
+# TCC probe run — Thu Aug 13 09:46:02 EDT 2026
+
+    ProductName:		macOS
+    ProductVersion:		26.5.2
+    BuildVersion:		25F84
+
+## Phase A — ad-hoc signature
+
+Build 1 (ad-hoc):
+    Identifier=com.qodesmith.recap.tcc-probe
+    Signature=adhoc
+    TeamIdentifier=not set
+- M1 · prompt on first tap IO (ad-hoc bundle): no
+- M1 · first-probe verdict (grant arrived mid-probe): silence

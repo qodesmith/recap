@@ -40,7 +40,8 @@ final class SystemAudioTap {
         // The tap needs a real output device to clock and feed it — a tap-only
         // aggregate runs but delivers silence. Attach the current default
         // output device as the aggregate's main sub-device.
-        let outputUID = try Self.defaultOutputDeviceUID()
+        let (outputUID, outputName) = try Self.defaultOutputDevice()
+        self.outputDeviceInfo = "\(outputName) [\(outputUID)]"
 
         // Wrap the tap in a private aggregate device we can run an IOProc on.
         let aggUID = "com.qodesmith.recap.spike.agg.\(UUID().uuidString)"
@@ -66,8 +67,27 @@ final class SystemAudioTap {
         self.aggID = agg
     }
 
-    /// UID of the current default output device — the aggregate's main sub-device.
-    static func defaultOutputDeviceUID() throws -> String {
+    /// Human-readable identity of the output device the aggregate wraps —
+    /// logged per probe so a dead IO cycle can be tied to the device it was
+    /// clocked from.
+    let outputDeviceInfo: String
+
+    /// The aggregate's own idea of whether its IO cycle is running — read
+    /// after AudioDeviceStart to split "device never started" from "device
+    /// runs but our IOProc sees nothing".
+    var aggregateIsRunning: Bool {
+        var addr = AudioObjectPropertyAddress(
+            mSelector: kAudioDevicePropertyDeviceIsRunning,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMain)
+        var val: UInt32 = 0
+        var size = UInt32(MemoryLayout<UInt32>.size)
+        guard AudioObjectGetPropertyData(aggID, &addr, 0, nil, &size, &val) == noErr else { return false }
+        return val != 0
+    }
+
+    /// UID + name of the current default output device — the aggregate's main sub-device.
+    static func defaultOutputDevice() throws -> (uid: String, name: String) {
         var addr = AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDefaultOutputDevice,
             mScope: kAudioObjectPropertyScopeGlobal,
@@ -77,18 +97,23 @@ final class SystemAudioTap {
         try osCheck(AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &addr, 0, nil, &size, &deviceID),
                     "read kAudioHardwarePropertyDefaultOutputDevice")
 
-        var uidAddr = AudioObjectPropertyAddress(
-            mSelector: kAudioDevicePropertyDeviceUID,
-            mScope: kAudioObjectPropertyScopeGlobal,
-            mElement: kAudioObjectPropertyElementMain)
-        var uid: CFString? = nil
-        var uidSize = UInt32(MemoryLayout<CFString?>.size)
-        let status = withUnsafeMutablePointer(to: &uid) {
-            AudioObjectGetPropertyData(deviceID, &uidAddr, 0, nil, &uidSize, $0)
+        func stringProp(_ selector: AudioObjectPropertySelector, _ label: String) throws -> String {
+            var a = AudioObjectPropertyAddress(
+                mSelector: selector,
+                mScope: kAudioObjectPropertyScopeGlobal,
+                mElement: kAudioObjectPropertyElementMain)
+            var s: CFString? = nil
+            var sz = UInt32(MemoryLayout<CFString?>.size)
+            let status = withUnsafeMutablePointer(to: &s) {
+                AudioObjectGetPropertyData(deviceID, &a, 0, nil, &sz, $0)
+            }
+            try osCheck(status, label)
+            guard let s else { throw OSStatusError(status: -1, label: "\(label) was nil") }
+            return s as String
         }
-        try osCheck(status, "read kAudioDevicePropertyDeviceUID")
-        guard let uid else { throw OSStatusError(status: -1, label: "default output UID was nil") }
-        return uid as String
+        let uid = try stringProp(kAudioDevicePropertyDeviceUID, "read kAudioDevicePropertyDeviceUID")
+        let name = (try? stringProp(kAudioObjectPropertyName, "read kAudioObjectPropertyName")) ?? "?"
+        return (uid, name)
     }
 
     // Diagnostics (spike only): peak sample seen and whether we've logged shape.
@@ -112,11 +137,12 @@ final class SystemAudioTap {
         var proc: AudioDeviceIOProcID?
         let status = AudioDeviceCreateIOProcIDWithBlock(&proc, aggID, nil) {
             (_, inInputData, inInputTime, _, _) in
+            diag.notedInvocation()
             let abl = inInputData.pointee
             // Header memory (the ABL struct itself) is safe; buffer CONTENTS
             // are not necessarily. Cap the count in case of a garbage header.
             let bufCount = min(Int(abl.mNumberBuffers), 8)
-            guard bufCount > 0 else { return }
+            guard bufCount > 0 else { diag.notedEmptyABL(); return }
             let buffers = withUnsafePointer(to: inInputData.pointee.mBuffers) {
                 UnsafeBufferPointer(start: $0, count: bufCount)
             }
@@ -184,14 +210,26 @@ final class ScratchBuffer {
     deinit { ptr?.deallocate() }
 }
 
-/// Spike diagnostics: buffer-list shape, peak per buffer, and how many
-/// callbacks handed us protected (unreadable) buffers — the pending-prompt
-/// state. All reads/writes under one lock; peak scans happen outside it.
+struct DiagSnapshot {
+    var peak: Float
+    var protectedCallbacks: Int
+    var invocations: Int
+    var emptyABLs: Int
+    var shape: String
+}
+
+/// Spike diagnostics: raw IOProc invocations, empty buffer lists, protected
+/// (unreadable) buffers, peak per buffer, and the buffer-list shape. The
+/// counters split "IO cycle never ran" / "ran but empty" / "ran but
+/// unreadable" / "ran with silence" — four states one bare frame count
+/// conflates. All reads/writes under one lock; peak scans happen outside it.
 final class TapDiag {
     private let lock = NSLock()
     private var shape = ""
     private var peakPerBuffer: [Float] = []
     private var protectedCallbacks = 0
+    private var invocations = 0
+    private var emptyABLs = 0
 
     func observeShape(_ buffers: UnsafeBufferPointer<AudioBuffer>) {
         lock.lock(); defer { lock.unlock() }
@@ -210,14 +248,25 @@ final class TapDiag {
         if p > peakPerBuffer[bufferIndex] { peakPerBuffer[bufferIndex] = p }
     }
 
+    func notedInvocation() {
+        lock.lock(); defer { lock.unlock() }
+        invocations += 1
+    }
+
+    func notedEmptyABL() {
+        lock.lock(); defer { lock.unlock() }
+        emptyABLs += 1
+    }
+
     func notedProtected() {
         lock.lock(); defer { lock.unlock() }
         protectedCallbacks += 1
     }
 
-    func snapshot() -> (peak: Float, protectedCallbacks: Int, shape: String) {
+    func snapshot() -> DiagSnapshot {
         lock.lock(); defer { lock.unlock() }
-        return (peakPerBuffer.max() ?? 0, protectedCallbacks, shape)
+        return DiagSnapshot(peak: peakPerBuffer.max() ?? 0, protectedCallbacks: protectedCallbacks,
+                            invocations: invocations, emptyABLs: emptyABLs, shape: shape)
     }
 }
 
@@ -225,7 +274,7 @@ extension SystemAudioTap {
     func printDiagnostics() {
         let s = diag.snapshot()
         print("  [tap diag] input buffer shape: \(s.shape.isEmpty ? "(no callbacks)" : s.shape)")
-        print("  [tap diag] peak \(String(format: "%.4f", s.peak)), protected callbacks \(s.protectedCallbacks)")
+        print("  [tap diag] peak \(String(format: "%.4f", s.peak)), invocations \(s.invocations), empty ABLs \(s.emptyABLs), protected \(s.protectedCallbacks)")
     }
 }
 

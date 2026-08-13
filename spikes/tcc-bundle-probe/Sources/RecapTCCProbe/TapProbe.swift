@@ -6,10 +6,14 @@ import Foundation
 struct TapProbeResult: Codable {
     var ok: Bool
     var error: String?
+    var setup: String?
     var callbacks: Int
     var frames: Int
     var peak: Float
     var protectedCallbacks: Int
+    var ioInvocations: Int
+    var emptyBufferLists: Int
+    var aggregateRunning: Bool
     var verdict: String
 }
 
@@ -22,25 +26,31 @@ enum TapProbe {
     // exactly 0 (#9's headline). The floor only guards against dither noise.
     static let signalFloor: Float = 0.001
 
-    static func run(seconds: Int, tick: ((Int, Float) -> Void)? = nil) -> TapProbeResult {
+    static func run(seconds: Int, tick: ((Int, Float, Int) -> Void)? = nil) -> TapProbeResult {
         let tap: SystemAudioTap
         do {
             tap = try SystemAudioTap()
         } catch {
-            return TapProbeResult(ok: false, error: "\(error)", callbacks: 0, frames: 0, peak: 0,
-                                  protectedCallbacks: 0, verdict: "ERROR — tap creation failed: \(error)")
+            return TapProbeResult(ok: false, error: "\(error)", setup: nil, callbacks: 0, frames: 0, peak: 0,
+                                  protectedCallbacks: 0, ioInvocations: 0, emptyBufferLists: 0,
+                                  aggregateRunning: false, verdict: "ERROR — tap creation failed: \(error)")
         }
+        let setup = "output device: \(tap.outputDeviceInfo)"
         do {
             try tap.start()
         } catch {
             tap.stop()
-            return TapProbeResult(ok: false, error: "\(error)", callbacks: 0, frames: 0, peak: 0,
-                                  protectedCallbacks: 0, verdict: "ERROR — tap start failed: \(error)")
+            return TapProbeResult(ok: false, error: "\(error)", setup: setup, callbacks: 0, frames: 0, peak: 0,
+                                  protectedCallbacks: 0, ioInvocations: 0, emptyBufferLists: 0,
+                                  aggregateRunning: false, verdict: "ERROR — tap start failed: \(error)")
         }
         for s in 1...seconds {
             Thread.sleep(forTimeInterval: 1)
-            tick?(s, tap.peakSample)
+            let snap = tap.diag.snapshot()
+            tick?(s, snap.peak, snap.invocations)
         }
+        // Read before stop(): after stop the property is trivially false.
+        let running = tap.aggregateIsRunning
         tap.stop()
 
         let callbacks = tap.writer.callbackCount
@@ -48,10 +58,12 @@ enum TapProbe {
         let snap = tap.diag.snapshot()
         let peak = snap.peak
         let verdict: String
-        if callbacks == 0 && snap.protectedCallbacks > 0 {
-            verdict = "PROTECTED — \(snap.protectedCallbacks) callbacks delivered unreadable buffers and none were readable. This is the pending-prompt state; answer the prompt and probe again."
+        if snap.invocations == 0 {
+            verdict = "NO IO — the IOProc never fired in \(seconds)s (aggregate reports running=\(running)). The IO cycle is dead; this is below the buffer level entirely."
+        } else if callbacks == 0 && snap.protectedCallbacks > 0 {
+            verdict = "PROTECTED — \(snap.invocations) IOProc invocations, but every readable attempt hit protected memory (\(snap.protectedCallbacks)). This is the pending-prompt state; answer the prompt and probe again."
         } else if callbacks == 0 {
-            verdict = "NO CALLBACKS — the aggregate device delivered nothing at all"
+            verdict = "EMPTY IO — the IOProc fired \(snap.invocations)× but delivered no audio buffers (empty buffer lists: \(snap.emptyABLs)). The device cycles without giving us data."
         } else if peak < signalFloor {
             verdict = "SILENCE — tap ran (\(callbacks) callbacks, \(frames) frames) but delivered only zeros. Either the tap is denied, or nothing was playing."
         } else {
@@ -59,8 +71,9 @@ enum TapProbe {
         }
         let suffix = snap.protectedCallbacks > 0 && callbacks > 0
             ? " (+\(snap.protectedCallbacks) unreadable callbacks while the prompt was pending)" : ""
-        return TapProbeResult(ok: true, error: nil, callbacks: callbacks, frames: frames, peak: peak,
-                              protectedCallbacks: snap.protectedCallbacks, verdict: verdict + suffix)
+        return TapProbeResult(ok: true, error: nil, setup: setup, callbacks: callbacks, frames: frames, peak: peak,
+                              protectedCallbacks: snap.protectedCallbacks, ioInvocations: snap.invocations,
+                              emptyBufferLists: snap.emptyABLs, aggregateRunning: running, verdict: verdict + suffix)
     }
 
     static func runChildAndPrint(seconds: Int) {

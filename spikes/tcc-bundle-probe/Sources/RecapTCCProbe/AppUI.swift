@@ -30,10 +30,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         log("▶ IN-PROCESS TAP PROBE — the tap is created NOW; if a system-audio prompt is going to fire, it fires here.")
         log("  Keep music playing for the whole 10 s.")
         DispatchQueue.global().async {
-            let r = TapProbe.run(seconds: 10) { s, p in
-                self.log(String(format: "  t=%2ds  cumulative peak %.4f", s, p))
+            let r = TapProbe.run(seconds: 10) { s, p, inv in
+                self.log(String(format: "  t=%2ds  ioProc invocations %d, cumulative peak %.4f", s, inv, p))
             }
-            self.log("  callbacks=\(r.callbacks) frames=\(r.frames)")
+            if let setup = r.setup { self.log("  \(setup)") }
+            self.log("  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
             self.log("■ VERDICT (in-process tap): \(r.verdict)")
             self.releaseBusy()
         }
@@ -56,7 +57,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 p.waitUntilExit()
                 let data = out.fileHandleForReading.readDataToEndOfFile()
                 if let r = try? JSONDecoder().decode(TapProbeResult.self, from: data) {
-                    self.log("  child exit=\(p.terminationStatus)  callbacks=\(r.callbacks) frames=\(r.frames)")
+                    if let setup = r.setup { self.log("  \(setup)") }
+                    self.log("  child exit=\(p.terminationStatus)  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
                     self.log("■ VERDICT (child-process tap): \(r.verdict)")
                 } else {
                     self.log("■ VERDICT (child-process tap): ERROR — unparseable child output: \(String(decoding: data, as: UTF8.self))")

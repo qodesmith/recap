@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THROWAWAY SPIKE (#27). Bundle plist for the probe app. TCC reads the
+     purpose strings from here — the point of the experiment is whether the
+     prompt shows them for a double-clicked bundle. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>RecapTCCProbe</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.qodesmith.recap.tcc-probe</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>Recap TCC Probe</string>
+    <key>CFBundleDisplayName</key>
+    <string>Recap TCC Probe</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>26.0</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Recap TCC Probe uses the microphone to verify that mic consent works from a signed bundle.</string>
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>Recap TCC Probe captures system audio to verify that the macOS permission prompt fires for a signed bundle.</string>
+</dict>
+</plist>

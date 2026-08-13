@@ -13,6 +13,8 @@ struct TapProbeResult: Codable {
     var protectedCallbacks: Int
     var ioInvocations: Int
     var emptyBufferLists: Int
+    var nilBuffers: Int
+    var bufferShape: String
     var aggregateRunning: Bool
     var verdict: String
 }
@@ -33,7 +35,7 @@ enum TapProbe {
         } catch {
             return TapProbeResult(ok: false, error: "\(error)", setup: nil, callbacks: 0, frames: 0, peak: 0,
                                   protectedCallbacks: 0, ioInvocations: 0, emptyBufferLists: 0,
-                                  aggregateRunning: false, verdict: "ERROR — tap creation failed: \(error)")
+                                  nilBuffers: 0, bufferShape: "", aggregateRunning: false, verdict: "ERROR — tap creation failed: \(error)")
         }
         let setup = "output device: \(tap.outputDeviceInfo)"
         do {
@@ -42,7 +44,7 @@ enum TapProbe {
             tap.stop()
             return TapProbeResult(ok: false, error: "\(error)", setup: setup, callbacks: 0, frames: 0, peak: 0,
                                   protectedCallbacks: 0, ioInvocations: 0, emptyBufferLists: 0,
-                                  aggregateRunning: false, verdict: "ERROR — tap start failed: \(error)")
+                                  nilBuffers: 0, bufferShape: "", aggregateRunning: false, verdict: "ERROR — tap start failed: \(error)")
         }
         for s in 1...seconds {
             Thread.sleep(forTimeInterval: 1)
@@ -63,7 +65,7 @@ enum TapProbe {
         } else if callbacks == 0 && snap.protectedCallbacks > 0 {
             verdict = "PROTECTED — \(snap.invocations) IOProc invocations, but every readable attempt hit protected memory (\(snap.protectedCallbacks)). This is the pending-prompt state; answer the prompt and probe again."
         } else if callbacks == 0 {
-            verdict = "EMPTY IO — the IOProc fired \(snap.invocations)× but delivered no audio buffers (empty buffer lists: \(snap.emptyABLs)). The device cycles without giving us data."
+            verdict = "EMPTY IO — the IOProc fired \(snap.invocations)× but delivered no readable audio (empty buffer lists: \(snap.emptyABLs), nil/zero-size buffers: \(snap.nilBuffers), shape: \(snap.shape.isEmpty ? "n/a" : snap.shape)). The device cycles without giving us data."
         } else if peak < signalFloor {
             verdict = "SILENCE — tap ran (\(callbacks) callbacks, \(frames) frames) but delivered only zeros. Either the tap is denied, or nothing was playing."
         } else {
@@ -73,7 +75,8 @@ enum TapProbe {
             ? " (+\(snap.protectedCallbacks) unreadable callbacks while the prompt was pending)" : ""
         return TapProbeResult(ok: true, error: nil, setup: setup, callbacks: callbacks, frames: frames, peak: peak,
                               protectedCallbacks: snap.protectedCallbacks, ioInvocations: snap.invocations,
-                              emptyBufferLists: snap.emptyABLs, aggregateRunning: running, verdict: verdict + suffix)
+                              emptyBufferLists: snap.emptyABLs, nilBuffers: snap.nilBuffers, bufferShape: snap.shape,
+                              aggregateRunning: running, verdict: verdict + suffix)
     }
 
     static func runChildAndPrint(seconds: Int) {

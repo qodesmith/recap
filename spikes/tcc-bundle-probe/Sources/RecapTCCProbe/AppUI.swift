@@ -34,7 +34,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 self.log(String(format: "  t=%2ds  ioProc invocations %d, cumulative peak %.4f", s, inv, p))
             }
             if let setup = r.setup { self.log("  \(setup)") }
-            self.log("  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
+            self.log("  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) nilBufs=\(r.nilBuffers) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
             self.log("■ VERDICT (in-process tap): \(r.verdict)")
             self.releaseBusy()
         }
@@ -58,7 +58,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 let data = out.fileHandleForReading.readDataToEndOfFile()
                 if let r = try? JSONDecoder().decode(TapProbeResult.self, from: data) {
                     if let setup = r.setup { self.log("  \(setup)") }
-                    self.log("  child exit=\(p.terminationStatus)  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
+                    self.log("  child exit=\(p.terminationStatus)  callbacks=\(r.callbacks) frames=\(r.frames) invocations=\(r.ioInvocations) emptyABLs=\(r.emptyBufferLists) nilBufs=\(r.nilBuffers) protected=\(r.protectedCallbacks) aggRunning=\(r.aggregateRunning)")
                     self.log("■ VERDICT (child-process tap): \(r.verdict)")
                 } else {
                     self.log("■ VERDICT (child-process tap): ERROR — unparseable child output: \(String(decoding: data, as: UTF8.self))")

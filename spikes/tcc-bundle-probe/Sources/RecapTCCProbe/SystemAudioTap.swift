@@ -149,7 +149,7 @@ final class SystemAudioTap {
             diag.observeShape(buffers)
 
             for (i, b) in buffers.enumerated() {
-                guard let data = b.mData, b.mDataByteSize > 0 else { continue }
+                guard let data = b.mData, b.mDataByteSize > 0 else { diag.notedNilBuffer(); continue }
                 let size = Int(b.mDataByteSize)
                 guard let copy = scratch.copyIn(data, size) else {
                     diag.notedProtected()
@@ -215,6 +215,7 @@ struct DiagSnapshot {
     var protectedCallbacks: Int
     var invocations: Int
     var emptyABLs: Int
+    var nilBuffers: Int
     var shape: String
 }
 
@@ -230,6 +231,7 @@ final class TapDiag {
     private var protectedCallbacks = 0
     private var invocations = 0
     private var emptyABLs = 0
+    private var nilBuffers = 0
 
     func observeShape(_ buffers: UnsafeBufferPointer<AudioBuffer>) {
         lock.lock(); defer { lock.unlock() }
@@ -258,6 +260,11 @@ final class TapDiag {
         emptyABLs += 1
     }
 
+    func notedNilBuffer() {
+        lock.lock(); defer { lock.unlock() }
+        nilBuffers += 1
+    }
+
     func notedProtected() {
         lock.lock(); defer { lock.unlock() }
         protectedCallbacks += 1
@@ -266,7 +273,7 @@ final class TapDiag {
     func snapshot() -> DiagSnapshot {
         lock.lock(); defer { lock.unlock() }
         return DiagSnapshot(peak: peakPerBuffer.max() ?? 0, protectedCallbacks: protectedCallbacks,
-                            invocations: invocations, emptyABLs: emptyABLs, shape: shape)
+                            invocations: invocations, emptyABLs: emptyABLs, nilBuffers: nilBuffers, shape: shape)
     }
 }
 
